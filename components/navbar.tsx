@@ -20,12 +20,11 @@ export default function Navbar() {
   const menuItems = [
     {
       name: "Yeguada",
-      href: "/",
+      href: "/yeguada",
       dropdown: true,
       items: [
-        { name: "Historia", href: "/#historia" },
-        { name: "Instalaciones", href: "/#instalaciones" },
-        { name: "Nacimientos", href: "/#nacimientos" },
+        { name: "Historia", href: "/yeguada#historia" },
+        { name: "Instalaciones", href: "/yeguada#instalaciones" },
       ],
     },
     {
@@ -58,20 +57,20 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-20">
           <Link href="/" className="flex items-center">
             <Image
-              src="/placeholder.svg?height=50&width=50&query=horse logo"
+              src="/logo-white.jpg"
               alt="Yeguada Agrado Logo"
-              width={50}
-              height={50}
+              width={160}
+              height={160}
               className="mr-3"
             />
-            <span className="text-gold font-bold text-xl">Yeguada Agrado</span>
+            <span className="text-primary hover:text-gold font-bold text-xl">Yeguada Agrado</span>
           </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
             {menuItems.map((item) => (
               <div key={item.name} className="relative group">
-                <Link href={item.href} className="text-white hover:text-gold transition-colors flex items-center">
+                <Link href={item.href} className="text-primary hover:text-gold transition-colors flex items-center">
                   {item.name}
                   {item.dropdown && <ChevronDown className="ml-1 h-4 w-4" />}
                 </Link>
@@ -83,7 +82,7 @@ export default function Navbar() {
                         <Link
                           key={subItem.name}
                           href={subItem.href}
-                          className="block px-4 py-2 text-sm text-white hover:bg-primary hover:text-white"
+                          className="block px-4 py-2 text-sm text-primary hover:bg-primary hover:text-white"
                         >
                           {subItem.name}
                         </Link>
@@ -97,7 +96,7 @@ export default function Navbar() {
 
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-white hover:text-gold">
+            <button onClick={() => setIsOpen(!isOpen)} className="text-primary hover:text-gold">
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
@@ -111,12 +110,12 @@ export default function Navbar() {
             {menuItems.map((item) => (
               <div key={item.name}>
                 <div
-                  className="flex items-center justify-between px-3 py-2 text-white"
+                  className="flex items-center justify-between px-3 py-2 text-primary"
                   onClick={() => item.dropdown && toggleDropdown(item.name)}
                 >
                   <Link
                     href={item.href}
-                    className="block text-white hover:text-gold"
+                    className="block text-primary hover:text-gold"
                     onClick={() => !item.dropdown && setIsOpen(false)}
                   >
                     {item.name}
@@ -134,7 +133,7 @@ export default function Navbar() {
                       <Link
                         key={subItem.name}
                         href={subItem.href}
-                        className="block px-3 py-2 text-sm text-gray-300 hover:text-gold"
+                        className="block px-3 py-2 text-sm text-primary hover:text-gold"
                         onClick={() => setIsOpen(false)}
                       >
                         {subItem.name}

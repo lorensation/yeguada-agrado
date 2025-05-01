@@ -174,8 +174,8 @@ export default function NacimientosSection() {
   return (
     <section id="nacimientos" className="py-16 w-full overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 mb-10">
-        <h2 className="text-3xl font-bold text-gold mb-6 text-center">Últimos Nacimientos</h2>
-        <p className="text-gray-300 text-center max-w-3xl mx-auto">
+        <h2 className="text-3xl font-bold text-primary mb-6 text-center hover:text-gold">Últimos Nacimientos</h2>
+        <p className="text-contrast text-center max-w-3xl mx-auto">
           Celebramos con orgullo la llegada de nuevos potros a nuestra yeguada, fruto de cuidadosas selecciones genéticas
           y de nuestro compromiso con la excelencia.
         </p>
@@ -189,7 +189,7 @@ export default function NacimientosSection() {
               variant={activeYear === year ? "default" : "outline"}
               onClick={() => handleYearChange(year)}
               className={`
-                ${activeYear === year ? "bg-gold text-black hover:bg-gold/90" : "text-gold border-gold hover:bg-gold/10"}
+                ${activeYear === year ? "bg-primary text-white hover:bg-primary/90" : "text-primary border-primary hover:bg-primary/10"}
                 min-w-20
               `}
             >
@@ -217,7 +217,7 @@ export default function NacimientosSection() {
             {nacimientos.length > 0 ? (
               nacimientos.map((item, index) => (
                 <CarouselItem key={index} className="pl-2 md:pl-4 sm:basis-1/2 md:basis-1/3 lg:basis-1/3">
-                  <Card className="bg-primary bg-opacity-10 rounded-lg overflow-hidden h-full flex flex-col">
+                  <Card className="bg-contrast/5 rounded-lg overflow-hidden h-full flex flex-col">
                     <div className="relative h-64 w-full">
                       <Image 
                         src={item.image || "/placeholder.svg"} 
@@ -227,19 +227,19 @@ export default function NacimientosSection() {
                       />
                     </div>
                     <CardContent className="p-4 flex-1 flex flex-col">
-                      <h3 className="text-xl font-semibold text-gold">{item.name}</h3>
-                      <p className="text-xl font-semibold text-gold">{item.parentage}</p>
-                      <p className="text-gray-300 mb-1">
+                      <h3 className="text-xl font-semibold text-primary">{item.name}</h3>
+                      <p className="text-xl font-semibold text-primary">{item.parentage}</p>
+                      <p className="text-contrast mb-1">
                         {item.sex === "M" ? "Macho" : "Hembra"} - {getColorName(item.color)}
                       </p>
-                      <p className="text-gray-300 mt-auto">{item.date}</p>
+                      <p className="text-contrast mt-auto">{item.date}</p>
                     </CardContent>
                   </Card>
                 </CarouselItem>
               ))
             ) : (
               <CarouselItem className="pl-2 md:pl-4 basis-full">
-                <div className="h-64 flex items-center justify-center text-gray-300 text-xl">
+                <div className="h-64 flex items-center justify-center text-contrast text-xl">
                   No hay nacimientos registrados para el año {activeYear}
                 </div>
               </CarouselItem>
@@ -247,8 +247,8 @@ export default function NacimientosSection() {
           </CarouselContent>
           {nacimientos.length > 3 && (
             <div className="flex justify-center gap-4 mt-8">
-              <CarouselPrevious className="relative static translate-y-0 left-0 bg-primary/10 hover:bg-primary/20 text-white border-gold" />
-              <CarouselNext className="relative static translate-y-0 right-0 bg-primary/10 hover:bg-primary/20 text-white border-gold" />
+              <CarouselPrevious className="relative static translate-y-0 left-0 bg-contrast/10 hover:bg-contrast/20 text-primary border-primary" />
+              <CarouselNext className="relative static translate-y-0 right-0 bg-contrast/10 hover:bg-contrast/20 text-primary border-primary" />
             </div>
           )}
         </Carousel>

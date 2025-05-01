@@ -9,17 +9,22 @@ export default function HeroCarousel() {
 
   const slides = [
     {
-      image: "/placeholder.svg?height=800&width=1600&query=caballos en prado",
+      image: "/inicio-miguel.jpg",
       title: "Bienvenidos a Yeguada Agrado",
       description: "Tradición y excelencia en la cría de caballos de pura raza",
     },
     {
-      image: "/placeholder.svg?height=800&width=1600&query=caballo corriendo",
+      image: "/QuickArtist+Potro.jpg",
+      title: "Bienvenidos a Yeguada Agrado",
+      description: "Tradición y excelencia en la cría de caballos de pura raza",
+    },
+    {
+      image: "/caballos-descansando.png",
       title: "Sementales de Primera Calidad",
       description: "Ejemplares seleccionados para garantizar la mejor genética",
     },
     {
-      image: "/placeholder.svg?height=800&width=1600&query=yeguas y potros",
+      image: "/cria-de-caballos.png",
       title: "Servicios Profesionales",
       description: "Cría, doma y cuidados con los más altos estándares",
     },
@@ -51,11 +56,11 @@ export default function HeroCarousel() {
           }`}
         >
           <Image src={slide.image || "/placeholder.svg"} alt={slide.title} fill priority className="object-cover" />
-          <div className="absolute inset-0 bg-black bg-opacity-40" />
+          {/*<div className="absolute inset-0 bg-black bg-opacity-40" />
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-4">
             <h1 className="text-4xl md:text-6xl font-bold text-gold mb-4">{slide.title}</h1>
             <p className="text-xl md:text-2xl text-white max-w-3xl">{slide.description}</p>
-          </div>
+          </div>*/}
         </div>
       ))}
 

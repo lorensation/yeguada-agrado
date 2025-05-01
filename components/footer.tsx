@@ -1,12 +1,22 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Facebook, Instagram, Twitter } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="bg-background border-t border-gray-800 pt-12 pb-8">
+    <footer className="bg-contrast border-t border-gray-800 pt-12 pb-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
+            <div className="mb-4">
+              <Image 
+                src="/logo.jpg" 
+                alt="Yeguada Agrado Logo" 
+                width={120} 
+                height={120} 
+                className="rounded-lg object-cover"
+              />
+            </div>
             <h3 className="text-gold font-bold text-lg mb-4">Yeguada Agrado</h3>
             <p className="text-gray-300 mb-4">Dedicados a la cría y doma de caballos de alta calidad desde 1985.</p>
             <div className="flex space-x-4">

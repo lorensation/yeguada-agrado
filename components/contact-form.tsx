@@ -1,8 +1,8 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
+import { Check, Loader2 } from "lucide-react"
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -12,6 +12,8 @@ export default function ContactForm() {
     subject: "",
     message: "",
   })
+  
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle")
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
@@ -20,55 +22,91 @@ export default function ContactForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Aquí iría la lógica para enviar el formulario
-    console.log(formData)
-    alert("Mensaje enviado correctamente")
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      subject: "",
-      message: "",
-    })
+    setStatus("submitting")
+    
+    // Simulating form submission with a timeout
+    setTimeout(() => {
+      // Aquí iría la lógica para enviar el formulario
+      console.log(formData)
+      setStatus("success")
+      
+      // Reset form after 3 seconds
+      setTimeout(() => {
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+        })
+        setStatus("idle")
+      }, 3000)
+    }, 1500)
   }
 
   return (
     <div>
-      <h2 className="text-2xl font-bold text-gold mb-6">Envíanos un Mensaje</h2>
+      <h2 className="text-2xl font-bold text-primary transition-colors relative after:content-[''] after:block after:w-16 after:h-1 after:bg-gold after:mt-2 mb-6">
+        Envíanos un Mensaje
+      </h2>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">
-            Nombre
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-          />
+      {status === "success" ? (
+        <div className="bg-green-50 border-l-4 border-green-500 p-4 mb-6 rounded">
+          <div className="flex items-center">
+            <div className="flex-shrink-0">
+              <Check className="h-5 w-5 text-green-500" />
+            </div>
+            <div className="ml-3">
+              <p className="text-sm text-green-800 font-medium">
+                ¡Mensaje enviado correctamente! Nos pondremos en contacto contigo lo antes posible.
+              </p>
+            </div>
+          </div>
+        </div>
+      ) : null}
+
+      <form onSubmit={handleSubmit} className="space-y-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div>
+            <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              Nombre <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              disabled={status === "submitting"}
+              className="w-full px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md 
+                focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent
+                transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+              aria-describedby="name-required"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              Email <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              disabled={status === "submitting"}
+              className="w-full px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md 
+                focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent
+                transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+            />
+          </div>
         </div>
 
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-          />
-        </div>
-
-        <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-1">
+          <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
             Teléfono
           </label>
           <input
@@ -77,13 +115,16 @@ export default function ContactForm() {
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+            disabled={status === "submitting"}
+            className="w-full px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md 
+              focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent
+              transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
           />
         </div>
 
         <div>
-          <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-1">
-            Asunto
+          <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            Asunto <span className="text-red-500">*</span>
           </label>
           <select
             id="subject"
@@ -91,7 +132,10 @@ export default function ContactForm() {
             value={formData.subject}
             onChange={handleChange}
             required
-            className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+            disabled={status === "submitting"}
+            className="w-full px-4 py-2 text-primary bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md 
+              focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent
+              transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
           >
             <option value="">Selecciona un asunto</option>
             <option value="info">Información General</option>
@@ -103,8 +147,8 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">
-            Mensaje
+          <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            Mensaje <span className="text-red-500">*</span>
           </label>
           <textarea
             id="message"
@@ -112,16 +156,33 @@ export default function ContactForm() {
             value={formData.message}
             onChange={handleChange}
             required
+            disabled={status === "submitting"}
             rows={5}
-            className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+            className="w-full px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md 
+              focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent
+              transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
           ></textarea>
+        </div>
+
+        <div className="text-xs text-gray-500 dark:text-gray-400 mb-4">
+          <span className="text-red-500">*</span> Campos obligatorios
         </div>
 
         <button
           type="submit"
-          className="w-full bg-primary hover:bg-primary/80 text-white py-3 px-6 rounded-md transition-colors font-medium"
+          disabled={status === "submitting"}
+          className="w-full flex items-center justify-center bg-primary hover:bg-primary/90 focus:bg-primary/90 text-white py-3 px-6 rounded-md 
+            transition-colors font-medium disabled:opacity-60 disabled:cursor-not-allowed 
+            focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
         >
-          Enviar Mensaje
+          {status === "submitting" ? (
+            <>
+              <Loader2 className="h-5 w-5 mr-2 animate-spin" />
+              Enviando...
+            </>
+          ) : (
+            "Enviar Mensaje"
+          )}
         </button>
       </form>
     </div>
