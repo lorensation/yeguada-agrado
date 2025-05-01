@@ -27,25 +27,25 @@ export default function ServiciosPage() {
       id: "doma",
       title: "Doma",
       description: "Doma profesional adaptada a las necesidades específicas de cada caballo.",
-      image: "/servicios/doma-principal.JPG",
+      image: "/servicios/doma-principal.jpg",
       detailDescription: "Nuestro servicio de doma se adapta a las necesidades individuales de cada caballo, respetando su temperamento y aptitudes. Contamos con profesionales experimentados que utilizan métodos respetuosos para lograr una comunicación efectiva entre jinete y caballo.",
       images: [
         "/servicios/doma/doma1.jpg",
-        "/servicios/doma/doma2.JPG",
-        "/servicios/doma/doma3.JPG"
+        "/servicios/doma/doma2.jpg",
+        "/servicios/doma/doma3.jpg"
       ]
     },
     {
       id: "pretraining",
       title: "Pretraining",
       description: "Preparación inicial para caballos jóvenes antes de comenzar su entrenamiento específico.",
-      image: "/servicios/pretraining-principal2.JPG",
+      image: "/servicios/pretraining-principal2.jpg",
       detailDescription: "El pretraining es fundamental para el desarrollo adecuado de caballos jóvenes. Este servicio incluye la familiarización con el equipo básico, aprendizaje de comandos elementales y acondicionamiento físico inicial, sentando las bases para un entrenamiento más avanzado en el futuro.",
       images: [
         "/servicios/pretraining/pretraining1.jpeg",
-        "/servicios/pretraining-principal.JPG",
-        "/servicios/pretraining/pretraining3.JPG",
-        "/servicios/pretraining/pretraining4.JPG"
+        "/servicios/pretraining-principal.jpg",
+        "/servicios/pretraining/pretraining3.jpg",
+        "/servicios/pretraining/pretraining4.jpg"
       ]
     },
     {

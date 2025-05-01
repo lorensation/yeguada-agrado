@@ -20,7 +20,7 @@ export default function ActualidadPage() {
       title: "Éxito en el Campeonato Nacional",
       date: "3 de marzo de 2025",
       summary: "Nuestros ejemplares obtuvieron reconocimientos destacados en el Campeonato Nacional.",
-      image: "/kowalsky-duque-albuquerque.JPG",
+      image: "/kowalsky-duque-albuquerque.jpg",
       slug: "exito-campeonato-nacional-2025",
     },
     {
@@ -36,7 +36,7 @@ export default function ActualidadPage() {
       title: "Seminario de doma clásica",
       date: "10 de abril de 2025",
       summary: "Gran éxito en nuestro seminario mensual de doma clásica con participación internacional.",
-      image: "/doma-black-horse.JPG",
+      image: "/doma-black-horse.jpg",
       slug: "seminario-doma-clasica-2025",
     },
     {
@@ -44,7 +44,7 @@ export default function ActualidadPage() {
       title: "Visita de expertos internacionales",
       date: "25 de marzo de 2025",
       summary: "Recibimos la visita de criadores y especialistas de renombre internacional.",
-      image: "/3horses+jockeys.JPG",
+      image: "/3horses+jockeys.jpg",
       slug: "visita-expertos-internacionales-2025",
     },
     {
@@ -60,7 +60,7 @@ export default function ActualidadPage() {
       title: "Jornada de puertas abiertas",
       date: "5 de marzo de 2025",
       summary: "Gran afluencia en nuestra jornada anual de puertas abiertas para amantes de la equitación.",
-      image: "/hero/hero2.JPG",
+      image: "/hero/hero2.jpg",
       slug: "jornada-puertas-abiertas-2025",
     },
     {
@@ -68,7 +68,7 @@ export default function ActualidadPage() {
       title: "Nuevo convenio de colaboración",
       date: "27 de febrero de 2025",
       summary: "Firmamos un importante convenio con la Federación Española de Hípica.",
-      image: "/inicio-miguel.JPG",
+      image: "/inicio-miguel.jpg",
       slug: "convenio-colaboracion-federacion-2025",
     },
     {
