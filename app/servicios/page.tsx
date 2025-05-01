@@ -17,9 +17,9 @@ export default function ServiciosPage() {
       image: "/servicios/cria-principal.jpeg",
       detailDescription: "Nuestro programa de cría está diseñado para producir caballos excepcionales mediante la selección cuidadosa de sementales y yeguas. Ofrecemos asesoramiento personalizado para garantizar los mejores resultados en la reproducción y el cuidado de los potros recién nacidos.",
       images: [
-        "/servicios/cria/cria3.jpg",
+        "/servicios/cria/cria3.jpeg",
         "/servicios/cria/cria2.jpeg",
-        "/servicios/cria/cria1.jpeg",
+        "/servicios/cria/cria1.jpg",
         "/servicios/cria/cria4.jpeg"
       ]
     },
@@ -57,7 +57,7 @@ export default function ServiciosPage() {
       images: [
         "/servicios/descanso/descanso1.jpeg",
         "/servicios/descanso/descanso2.jpeg",
-        "/servicios/descanso-principal1.jpg",
+        "/servicios/descanso-principal.jpeg",
       ],
     },
   ]
