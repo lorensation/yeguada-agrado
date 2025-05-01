@@ -41,6 +41,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/yeguada" className="text-gray-300 hover:text-gold transition-colors">
+                  Yeguada
+                </Link>
+              </li>
+              <li>
                 <Link href="/sementales" className="text-gray-300 hover:text-gold transition-colors">
                   Sementales
                 </Link>
@@ -66,10 +71,10 @@ export default function Footer() {
           <div>
             <h3 className="text-gold font-bold text-lg mb-4">Contacto</h3>
             <address className="not-italic text-gray-300 space-y-2">
-              <p>Carretera de Ejemplo, Km 5</p>
-              <p>28000 Madrid, España</p>
-              <p>Teléfono: +34 91 123 45 67</p>
-              <p>Email: info@yeguadaagrado.es</p>
+              <p>Carretera M507, km. 20, 500</p>
+              <p>28620 Aldea del Fresno, Madrid</p>
+              <p><a href="https://wa.me/34616053904">Teléfono: +34 616 05 39 04</a></p>
+              <p>Email: info@yeguada-agrado.es</p>
             </address>
           </div>
         </div>
