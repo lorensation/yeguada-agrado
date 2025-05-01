@@ -20,7 +20,7 @@ export default function ServiceCard({ title, description, image, id }: ServiceCa
 
   return (
     <div className="bg-primary bg-opacity-10 rounded-lg overflow-hidden">
-      <div className="relative h-64 w-full">
+      <div className="relative h-80 w-full">
         <Image src={image || "/placeholder.svg"} alt={title} fill className="object-cover" />
       </div>
       <div className="p-6">

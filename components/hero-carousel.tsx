@@ -9,22 +9,32 @@ export default function HeroCarousel() {
 
   const slides = [
     {
-      image: "/inicio-miguel.jpg",
+      image: "/hero/hero1.jpg",
       title: "Bienvenidos a Yeguada Agrado",
       description: "Tradición y excelencia en la cría de caballos de pura raza",
     },
     {
-      image: "/QuickArtist+Potro.jpg",
+      image: "/hero/hero2.jpg",
       title: "Bienvenidos a Yeguada Agrado",
       description: "Tradición y excelencia en la cría de caballos de pura raza",
     },
     {
-      image: "/caballos-descansando.png",
+      image: "/hero/hero3.jpg",
       title: "Sementales de Primera Calidad",
       description: "Ejemplares seleccionados para garantizar la mejor genética",
     },
     {
-      image: "/cria-de-caballos.png",
+      image: "/hero/hero4.jpeg",
+      title: "Servicios Profesionales",
+      description: "Cría, doma y cuidados con los más altos estándares",
+    },
+    {
+      image: "/hero/hero5.jpeg",
+      title: "Servicios Profesionales",
+      description: "Cría, doma y cuidados con los más altos estándares",
+    },
+    {
+      image: "/hero/hero6.jpg",
       title: "Servicios Profesionales",
       description: "Cría, doma y cuidados con los más altos estándares",
     },
@@ -47,7 +57,7 @@ export default function HeroCarousel() {
   }, [current])
 
   return (
-    <div className="relative h-[70vh] w-full overflow-hidden">
+    <div className="relative h-[70vh] md:h-[85vh] lg:h-[90vh] w-full overflow-hidden">
       {slides.map((slide, index) => (
         <div
           key={index}

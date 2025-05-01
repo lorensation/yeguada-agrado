@@ -39,11 +39,11 @@ export default function ServiciosPage() {
       id: "pretraining",
       title: "Pretraining",
       description: "Preparación inicial para caballos jóvenes antes de comenzar su entrenamiento específico.",
-      image: "/servicios/pretraining-principal.JPG",
+      image: "/servicios/pretraining-principal2.JPG",
       detailDescription: "El pretraining es fundamental para el desarrollo adecuado de caballos jóvenes. Este servicio incluye la familiarización con el equipo básico, aprendizaje de comandos elementales y acondicionamiento físico inicial, sentando las bases para un entrenamiento más avanzado en el futuro.",
       images: [
         "/servicios/pretraining/pretraining1.jpeg",
-        "/servicios/pretraining/pretraining2.JPG",
+        "/servicios/pretraining-principal.JPG",
         "/servicios/pretraining/pretraining3.JPG",
         "/servicios/pretraining/pretraining4.JPG"
       ]
@@ -52,13 +52,13 @@ export default function ServiciosPage() {
       id: "descanso",
       title: "Descanso",
       description: "Instalaciones de primera calidad para el descanso y recuperación de los caballos.",
-      image: "/servicios/descanso-principal.jpeg",
+      image: "/servicios/descanso-principal2.jpg",
       detailDescription: "Ofrecemos instalaciones especialmente diseñadas para el descanso y la recuperación de caballos. Con amplios paddocks, pastos de alta calidad y atención veterinaria permanente, garantizamos que su caballo reciba el mejor cuidado durante su periodo de descanso.",
       images: [
         "/servicios/descanso/descanso1.jpeg",
         "/servicios/descanso/descanso2.jpeg",
-        "/servicios/descanso/descanso3.JPG"
-      ]
+        "/servicios/descanso-principal.jpg",
+      ],
     },
   ]
 
