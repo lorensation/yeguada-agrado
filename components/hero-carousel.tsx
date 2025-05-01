@@ -9,12 +9,12 @@ export default function HeroCarousel() {
 
   const slides = [
     {
-      image: "/hero/hero1.jpg",
+      image: "/hero/hero2.jpg",
       title: "Bienvenidos a Yeguada Agrado",
       description: "Tradición y excelencia en la cría de caballos de pura raza",
     },
     {
-      image: "/hero/hero2.jpg",
+      image: "/hero/hero1.jpg",
       title: "Bienvenidos a Yeguada Agrado",
       description: "Tradición y excelencia en la cría de caballos de pura raza",
     },

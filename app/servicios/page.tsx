@@ -17,9 +17,9 @@ export default function ServiciosPage() {
       image: "/servicios/cria-principal.jpeg",
       detailDescription: "Nuestro programa de cría está diseñado para producir caballos excepcionales mediante la selección cuidadosa de sementales y yeguas. Ofrecemos asesoramiento personalizado para garantizar los mejores resultados en la reproducción y el cuidado de los potros recién nacidos.",
       images: [
-        "/servicios/cria/cria1.jpg",
+        "/servicios/cria/cria3.jpg",
         "/servicios/cria/cria2.jpeg",
-        "/servicios/cria/cria3.jpeg",
+        "/servicios/cria/cria1.jpeg",
         "/servicios/cria/cria4.jpeg"
       ]
     },
@@ -30,8 +30,8 @@ export default function ServiciosPage() {
       image: "/servicios/doma-principal.jpg",
       detailDescription: "Nuestro servicio de doma se adapta a las necesidades individuales de cada caballo, respetando su temperamento y aptitudes. Contamos con profesionales experimentados que utilizan métodos respetuosos para lograr una comunicación efectiva entre jinete y caballo.",
       images: [
-        "/servicios/doma/doma1.jpg",
         "/servicios/doma/doma2.jpg",
+        "/servicios/doma/doma1.jpg",
         "/servicios/doma/doma3.jpg"
       ]
     },
@@ -42,10 +42,10 @@ export default function ServiciosPage() {
       image: "/servicios/pretraining-principal2.jpg",
       detailDescription: "El pretraining es fundamental para el desarrollo adecuado de caballos jóvenes. Este servicio incluye la familiarización con el equipo básico, aprendizaje de comandos elementales y acondicionamiento físico inicial, sentando las bases para un entrenamiento más avanzado en el futuro.",
       images: [
-        "/servicios/pretraining/pretraining1.jpeg",
+        "/servicios/pretraining/pretraining4.jpg",
         "/servicios/pretraining-principal.jpg",
         "/servicios/pretraining/pretraining3.jpg",
-        "/servicios/pretraining/pretraining4.jpg"
+        "/servicios/pretraining/pretraining1.jpeg"
       ]
     },
     {
