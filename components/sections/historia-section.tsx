@@ -7,17 +7,16 @@ export default function HistoriaSection() {
         <div>
           <h2 className="text-3xl font-bold text-gold mb-6">Nuestra Historia</h2>
           <p className="text-gray-300 mb-4">
-            Fundada en 1985, Yeguada Agrado nació de la pasión por los caballos y el compromiso con la excelencia. Lo
-            que comenzó como un pequeño proyecto familiar se ha convertido en una de las yeguadas más prestigiosas de
-            España.
+            La Yeguada Agrado es un proyecto de la familiar que comenzó en 2019. Tras más de 15 años como propietarios de caballos de carreras en España, la familia Redondo se embarcó en un ilusionante proyecto de cría y centro de descanso para los caballos de su propiedad al adquirir un terreno de 20 hectáreas en Aldea del Fresno, Madrid.
           </p>
           <p className="text-gray-300 mb-4">
-            A lo largo de los años, hemos dedicado nuestros esfuerzos a la selección y mejora de nuestros ejemplares,
-            buscando siempre la perfección en cada generación.
+            La idea inicial era tener unas instalaciones para abastecer las necesidades de los caballos retirados y en competición de su propiedad, pero con el paso del tiempo, amigos y conocidos del turf quedaron prendados de sus instalaciones y comenzó el proceso de expansión y profesionalización de cara a nuevos clientes.
+          </p>
+          <p className="text-gray-300 mb-4">
+            Cinco años después de la adquisición de ese primer terreno con principio recreativo, la Yeguada Agrado ha crecido exponencialmente hasta convertirse en uno de los centros de cría y recuperación de caballos de carreras más importantes del país, con unas instalaciones de más de 50 hectáreas, 2 patios de cuadras, más de 30 boxes, caminador, pista de pre-training, prados de descanso, …
           </p>
           <p className="text-gray-300">
-            Hoy, Yeguada Agrado es sinónimo de calidad y tradición en el mundo ecuestre, con ejemplares que destacan
-            tanto por su belleza como por sus aptitudes deportivas.
+            Un proyecto joven y ambicioso que empezó desde cero con el objetivo de fortalecer y fomentar la cría y las carreras de caballos en España, basado en el respeto, admiración y cariño por los purasangre inglés, protagonistas en nuestros hipódromos y que nos permiten disfrutar de uno de los deportes más espectaculares del mundo.
           </p>
         </div>
         <div className="relative h-96 w-full">

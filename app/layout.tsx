@@ -10,7 +10,6 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Yeguada Agrado",
   description: "Yeguada Agrado - Cría, doma y servicios ecuestres de calidad",
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({

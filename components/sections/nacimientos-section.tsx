@@ -1,44 +1,257 @@
+"use client"
+
 import Image from "next/image"
+import { 
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
+} from "@/components/ui/carousel"
+import { useEffect, useState } from "react"
+import { Card, CardContent } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
 
 export default function NacimientosSection() {
-  const nacimientos = [
-    {
-      name: "Lucero",
-      date: "Marzo 2023",
-      image: "/placeholder.svg?height=300&width=400&query=potro recien nacido",
-    },
-    {
-      name: "Estrella",
-      date: "Abril 2023",
-      image: "/placeholder.svg?height=300&width=400&query=yegua con potro",
-    },
-    {
-      name: "Relámpago",
-      date: "Mayo 2023",
-      image: "/placeholder.svg?height=300&width=400&query=potro joven",
-    },
-  ]
+  const [isPaused, setIsPaused] = useState(false);
+  const [api, setApi] = useState<any>();
+  const [activeYear, setActiveYear] = useState<string>("2025");
+
+  const nacimientosData = {
+    "2025": [
+      {
+        name: "RULER OF THE WORLD X SAMAY",
+        parentage: "(KENDARGENT)",
+        sex: "M",
+        color: "al",
+        date: "23/02/2025",
+        image: "/placeholder.svg?height=300&width=400&query=potro+alazan",
+        year: "2025",
+      },
+      {
+        name: "BOW CREEK X QUICK ARTIST",
+        parentage: "(DUTCH ART)",
+        sex: "M",
+        color: "cas",
+        date: "10/03/2025",
+        image: "/placeholder.svg?height=300&width=400&query=potro+castano",
+        year: "2025",
+      },
+      {
+        name: "BOW CREEK X MITRA",
+        parentage: "(CARADAK)",
+        sex: "H",
+        color: "n",
+        date: "21/03/2025",
+        image: "/placeholder.svg?height=300&width=400&query=potra+negra",
+        year: "2025",
+      },
+      {
+        name: "BOW CREEK X LADY MOON",
+        parentage: "(LIGHTNING MOON)",
+        sex: "H",
+        color: "cas",
+        date: "26/03/2025",
+        image: "/placeholder.svg?height=300&width=400&query=potra+castana",
+        year: "2025",
+      },
+      {
+        name: "BOW CREEK X LINDA",
+        parentage: "(HUNTER'S LIGHT)",
+        sex: "H",
+        color: "n",
+        date: "30/03/2025",
+        image: "/placeholder.svg?height=300&width=400&query=potra+negra",
+        year: "2025",
+      },
+      {
+        name: "RULER OF THE WORLD X CRMBLECREEK",
+        parentage: "(SIR PRANCELOT)",
+        sex: "M",
+        color: "cas",
+        date: "07/04/2025",
+        image: "/placeholder.svg?height=300&width=400&query=potro+castano",
+        year: "2025",
+      },
+      {
+        name: "BOW CREEK X MUSIQUE SACRÉE",
+        parentage: "(DOCTOR DINO)",
+        sex: "M",
+        color: "cas",
+        date: "10/04/2025",
+        image: "/placeholder.svg?height=300&width=400&query=potro+castano",
+        year: "2025",
+      },
+      {
+        name: "BOW CREEK X STARLIGHT MYSTERY",
+        parentage: "(IFRAAJ)",
+        sex: "H",
+        color: "cas",
+        date: "14/04/2025",
+        image: "/placeholder.svg?height=300&width=400&query=potra+castana",
+        year: "2025",
+      },
+      {
+        name: "ELZAAM X GALDANA",
+        parentage: "(RIP VAN WINKEL)",
+        sex: "M",
+        color: "cas",
+        date: "19/04/2025",
+        image: "/placeholder.svg?height=300&width=400&query=potro+castano",
+        year: "2025",
+      },
+    ],
+    "2024": [
+      {
+        name: "ECTOT X LOVELY MOON",
+        parentage: "(KENDARGENT)",
+        sex: "H",
+        color: "tor",
+        date: "12/03/2024",
+        image: "/placeholder.svg?height=300&width=400&query=potra+torda",
+        year: "2024",
+      },
+      {
+        name: "MEHMAS X RITZY GAL",
+        parentage: "(HOLY ROMAN EMPEROR)",
+        sex: "M",
+        color: "cas",
+        date: "05/04/2024",
+        image: "/placeholder.svg?height=300&width=400&query=potro+castano",
+        year: "2024",
+      },
+      {
+        name: "KODIAC X SOLAR GLITTER",
+        parentage: "(GALILEO)",
+        sex: "H",
+        color: "al",
+        date: "27/04/2024",
+        image: "/placeholder.svg?height=300&width=400&query=potra+alazana",
+        year: "2024",
+      },
+    ]
+  };
+
+  const nacimientos = nacimientosData[activeYear as keyof typeof nacimientosData] || [];
+  const years = Object.keys(nacimientosData).sort().reverse();
+
+  // Helper function to get color name in Spanish
+  interface ColorsMap {
+    [key: string]: string;
+  }
+
+  const getColorName = (colorCode: string): string => {
+    const colors: ColorsMap = {
+      al: "Alazán",
+      cas: "Castaño",
+      n: "Negro",
+      tor: "Tordo",
+    };
+    return colors[colorCode] || colorCode;
+  }
+
+  useEffect(() => {
+    if (!api) return;
+
+    // Reset to first slide when changing year
+    api.scrollTo(0);
+
+    const autoplayInterval = setInterval(() => {
+      if (!isPaused) {
+        api.scrollNext();
+      }
+    }, 3000);
+
+    return () => {
+      clearInterval(autoplayInterval);
+    };
+  }, [api, isPaused, activeYear]);
+
+  const handleYearChange = (year: string) => {
+    setActiveYear(year);
+  };
 
   return (
-    <section id="nacimientos" className="py-16">
-      <h2 className="text-3xl font-bold text-gold mb-6 text-center">Últimos Nacimientos</h2>
-      <p className="text-gray-300 text-center max-w-3xl mx-auto mb-12">
-        Celebramos con orgullo la llegada de nuevos potros a nuestra yeguada, fruto de cuidadosas selecciones genéticas
-        y de nuestro compromiso con la excelencia.
-      </p>
+    <section id="nacimientos" className="py-16 w-full overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 mb-10">
+        <h2 className="text-3xl font-bold text-gold mb-6 text-center">Últimos Nacimientos</h2>
+        <p className="text-gray-300 text-center max-w-3xl mx-auto">
+          Celebramos con orgullo la llegada de nuevos potros a nuestra yeguada, fruto de cuidadosas selecciones genéticas
+          y de nuestro compromiso con la excelencia.
+        </p>
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-4 mb-6">
+        <div className="flex justify-center space-x-4">
+          {years.map((year) => (
+            <Button
+              key={year}
+              variant={activeYear === year ? "default" : "outline"}
+              onClick={() => handleYearChange(year)}
+              className={`
+                ${activeYear === year ? "bg-gold text-black hover:bg-gold/90" : "text-gold border-gold hover:bg-gold/10"}
+                min-w-20
+              `}
+            >
+              {year}
+            </Button>
+          ))}
+        </div>
+      </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {nacimientos.map((item, index) => (
-          <div key={index} className="bg-primary bg-opacity-10 rounded-lg overflow-hidden">
-            <div className="relative h-64 w-full">
-              <Image src={item.image || "/placeholder.svg"} alt={item.name} fill className="object-cover" />
+      <div 
+        className="w-full" 
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+            slidesToScroll: 1,
+          }}
+          className="w-full"
+          setApi={setApi}
+        >
+          <CarouselContent className="-ml-2 md:-ml-4">
+            {nacimientos.length > 0 ? (
+              nacimientos.map((item, index) => (
+                <CarouselItem key={index} className="pl-2 md:pl-4 sm:basis-1/2 md:basis-1/3 lg:basis-1/3">
+                  <Card className="bg-primary bg-opacity-10 rounded-lg overflow-hidden h-full flex flex-col">
+                    <div className="relative h-64 w-full">
+                      <Image 
+                        src={item.image || "/placeholder.svg"} 
+                        alt={item.name} 
+                        fill 
+                        className="object-cover" 
+                      />
+                    </div>
+                    <CardContent className="p-4 flex-1 flex flex-col">
+                      <h3 className="text-xl font-semibold text-gold">{item.name}</h3>
+                      <p className="text-xl font-semibold text-gold">{item.parentage}</p>
+                      <p className="text-gray-300 mb-1">
+                        {item.sex === "M" ? "Macho" : "Hembra"} - {getColorName(item.color)}
+                      </p>
+                      <p className="text-gray-300 mt-auto">{item.date}</p>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))
+            ) : (
+              <CarouselItem className="pl-2 md:pl-4 basis-full">
+                <div className="h-64 flex items-center justify-center text-gray-300 text-xl">
+                  No hay nacimientos registrados para el año {activeYear}
+                </div>
+              </CarouselItem>
+            )}
+          </CarouselContent>
+          {nacimientos.length > 3 && (
+            <div className="flex justify-center gap-4 mt-8">
+              <CarouselPrevious className="relative static translate-y-0 left-0 bg-primary/10 hover:bg-primary/20 text-white border-gold" />
+              <CarouselNext className="relative static translate-y-0 right-0 bg-primary/10 hover:bg-primary/20 text-white border-gold" />
             </div>
-            <div className="p-4">
-              <h3 className="text-xl font-semibold text-gold">{item.name}</h3>
-              <p className="text-gray-300">{item.date}</p>
-            </div>
-          </div>
-        ))}
+          )}
+        </Carousel>
       </div>
     </section>
   )
