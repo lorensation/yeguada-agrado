@@ -57,7 +57,7 @@ export default function ServiciosPage() {
       images: [
         "/servicios/descanso/descanso1.jpeg",
         "/servicios/descanso/descanso2.jpeg",
-        "/servicios/descanso-principal.jpg",
+        "/servicios/descanso-principal1.jpg",
       ],
     },
   ]
