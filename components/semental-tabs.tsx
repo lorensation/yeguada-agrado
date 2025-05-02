@@ -10,7 +10,6 @@ import {
   CarouselPrevious
 } from "@/components/ui/carousel"
 import { Separator } from "@/components/ui/separator"
-import OptimizedVideo from "@/components/optimized-video"
 import { Button } from "./ui/button"
 
 interface Produccion {
@@ -39,6 +38,7 @@ interface SementalTabsProps {
     height: string
     born: string
     origin: string
+    fee?: string
     achievements: string[]
     palmares?: Palmares[]
     producciones?: Produccion[]
@@ -167,37 +167,75 @@ export default function SementalTabs({ semental }: SementalTabsProps) {
       </div>
 
       {/* Content Sections */}
-      <div className="container mx-auto">
+      <div className="container mx-auto py-10">
         {/* Perfil Section */}
         <div ref={sectionRefs.perfil} id="perfil" className="px-4 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
-            <div className="md:col-span-3">
-              <h3 className="text-4xl font-bold text-primary mb-6">{semental.name}</h3>
-              <div className="text-primary mb-6 whitespace-pre-line">{semental.profile}</div>
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+            <div className="md:col-span-7">
+              <h1 className="text-5xl md:text-6xl font-bold text-contrast uppercase tracking-wide mb-2">{semental.name}</h1>
+              
+              {semental.origin && (
+                <p className="text-2xl text-primary mb-6 italic">{semental.origin}</p>
+              )}
+              
+              <div className="mb-8 text-lg">
+                <div className="flex gap-x-3 gap-y-3">
+                  {semental.born && (
+                    <p className="text-primary">{semental.born} |</p>
+                  )}
+                  {semental.height && (
+                    <p className="text-primary">{semental.height} |</p>
+                  )}
+                  {semental.fee && (
+                    <p className="text-primary">{semental.fee}</p>
+                  )}
+                </div>
+              </div>
+              
+              <div className="text-primary text-lg mb-6 whitespace-pre-line">
+                {semental.profile && semental.profile.split('\n').map((paragraph, idx) => (
+                  <p key={idx} className="mb-4">{paragraph}</p>
+                ))}
+              </div>
 
-              {semental.testimonial && (
-                <div className="mt-8 p-6 border-l-4 border-gold">
-                  <p className="text-primary italic">{semental.testimonial}</p>
+              {semental.achievements && semental.achievements.length > 0 && (
+                <div className="mt-6">
+                  <h4 className="text-xl font-bold text-gold mb-4">LOGROS DESTACADOS</h4>
+                  <ul className="list-none space-y-2">
+                    {semental.achievements.map((achievement, idx) => (
+                      <li key={idx} className="flex items-baseline">
+                        <span className="text-gold mr-2 text-lg">•</span>
+                        <span className="text-primary">{achievement}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               )}
             </div>
-            <div className="md:col-span-2 relative h-80 md:h-auto rounded-lg overflow-hidden">
-              <Image src={defaultProfileImage || "/placeholder.svg"} alt={semental.name} fill className="object-cover" />
+            <div className="md:col-span-5 relative w-[800px] h-[400px] md:h-[600px] rounded-lg overflow-hidden shadow-lg">
+              <Image 
+                src={defaultProfileImage || "/placeholder.svg"} 
+                alt={semental.name} 
+                fill 
+                className="object-cover" 
+                priority
+              />
             </div>
           </div>
           
-          {semental.videoUrl && (
-            <div className="mt-12">
-              <h4 className="text-2xl font-bold text-primary mb-4">VIDEO</h4>
-              <OptimizedVideo
-                src={semental.videoUrl}
-                poster={`/sementales/${semental.id.toLowerCase()}/poster.jpeg`}
-                aspectRatio="16:9"
-                controls={true}
-                preload="metadata"
-                muted={false}
-                className="max-w-4xl mx-auto"
-              />
+          {semental.testimonial && (
+            <div className="mt-8 p-6 border-l-4 w-full border-gold bg-primary/5 flex items-center gap-6">
+              <div className="relative h-16 w-16 rounded-full overflow-hidden flex-shrink-0 border-2 border-gold">
+                <Image 
+                  src={`/sementales/${semental.id.toLowerCase()}/testimonial-avatar.jpg`}
+                  alt="Testimonial"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div>
+                <p className="text-primary italic text-xl mb-2">{semental.testimonial}</p>
+              </div>
             </div>
           )}
           
@@ -290,7 +328,7 @@ export default function SementalTabs({ semental }: SementalTabsProps) {
             <div className="absolute top-0 left-0 bottom-0 w-1/4 bg-white"></div>
             
             {/* Image container positioned to take up 3/4 of the width and start from the second quarter */}
-            <div className="relative ml-0 w-full h-[600px]">
+            <div className="relative ml-[25%] w-full h-[800px]">
               <Image 
                 src={defaultImages.palmares || `/placeholder.svg?height=800&width=1200&query=${semental.name} achievement`} 
                 alt={`Palmarés de ${semental.name}`} 
@@ -301,7 +339,7 @@ export default function SementalTabs({ semental }: SementalTabsProps) {
               <div 
                 className="absolute inset-0" 
                 style={{ 
-                  background: 'linear-gradient(to right, rgba(255,255,255,0.7) 40%, rgba(255,255,255,0.3) 55%, rgba(255,255,255,0) 60%)' 
+                  background: 'linear-gradient(to right, rgba(255,255,255,1) 5%, rgba(255,255,255,0.3) 55%, rgba(255,255,255,0) 60%)' 
                 }}
               ></div>
             </div>
@@ -312,63 +350,73 @@ export default function SementalTabs({ semental }: SementalTabsProps) {
 
         {/* Producciones Section */}
         <div ref={sectionRefs.producciones} id="producciones" className="px-4 py-8">
-          <h3 className="text-4xl font-bold text-primary mb-6">Mejores Producciones</h3>
+          <h3 className="text-4xl font-bold text-primary mb-6">Mejor Producción</h3>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            <div className="md:col-span-2">
-              {semental.producciones && semental.producciones.length > 0 ? (
-                <div className="space-y-8">
-                  {semental.producciones.map((produccion, index) => (
-                    <div key={index} className="border-b border-contrast/20 pb-6 mb-6 last:border-0">
-                      <div className="flex gap-4">
-                        <div className="relative w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
-                          <Image 
-                            src={produccion.imagen || `/placeholder.svg?height=100&width=100&query=horse ${produccion.nombre}`} 
-                            alt={produccion.nombre}
-                            fill
-                            className="object-cover"
-                          />
-                        </div>
-                        <div className="flex-grow">
-                          <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
-                            <h4 className="text-2xl font-semibold text-primary">
-                              {produccion.nombre}, {produccion.año}
-                            </h4>
-                            <p className="text-gold">{produccion.ganancias}</p>
-                          </div>
-                          <p className="text-primary mb-2">{produccion.origen}</p>
-                          <p className="text-primary mb-4">{produccion.victorias}</p>
-
-                          <ul className="space-y-2">
-                            {produccion.logros.map((logro, idx) => (
-                              <li key={idx} className="flex items-start">
-                                <span className="text-gold mr-2">•</span>
-                                <span className="text-primary">{logro}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
+          {semental.producciones && semental.producciones.length > 0 ? (
+            <div className="space-y-12">
+              {semental.producciones.map((produccion, index) => (
+                <div key={index} className="border-b border-contrast/20 pb-10 mb-6 last:border-0">
+                  <div className="flex flex-col md:flex-row gap-8">
+                    {/* Larger image on the left */}
+                    <div className="relative w-full md:w-1/3 h-64 md:h-80 rounded-lg overflow-hidden flex-shrink-0">
+                      <Image 
+                        src={produccion.imagen || `/placeholder.svg?height=400&width=400&query=horse ${produccion.nombre}`} 
+                        alt={produccion.nombre}
+                        fill
+                        className="object-cover"
+                      />
                     </div>
-                  ))}
+                    
+                    {/* Details on the right, occupying more horizontal space */}
+                    <div className="flex-grow md:w-2/3">
+                      <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-6">
+                        <h4 className="text-3xl font-semibold text-primary">
+                          {produccion.nombre}, {produccion.año}
+                        </h4>
+                      </div>
+                      <p className="text-lg text-primary mb-3">{produccion.origen}</p>
+                      <p className="text-primary mb-6 font-medium">
+                        <span className="text-lg">{produccion.victorias}</span>
+                        <span className="text-xl font-semibold text-primary">- {produccion.ganancias}</span>
+                      </p>
+                      <ul className="space-y-3">
+                        {produccion.logros.map((logro, idx) => (
+                          <li key={idx} className="flex items-start text-lg">
+                            <span className="text-gold mr-3 text-xl">•</span>
+                            <span className="text-primary">{logro}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
                 </div>
-              ) : (
-                <p className="text-primary">Debut como semental en 2025.</p>
-              )}
+              ))}
             </div>
-            <div className="relative h-80 md:h-auto rounded-lg overflow-hidden">
-              <Image 
-                src={defaultImages.producciones || `/placeholder.svg?height=400&width=300&query=${semental.name} offspring`} 
-                alt={`Producciones de ${semental.name}`} 
-                fill 
-                className="object-cover" 
-              />
-            </div>
-          </div>
+          ) : (
+            <p className="text-lg text-primary">Debut como semental en 2025.</p>
+          )}
           
           <Separator className="my-8 bg-contrast/30" />
         </div>
 
+        {semental.videoUrl && (
+          <div className="mt-12 mb-10">
+            <h4 className="text-2xl font-bold text-primary mb-4">VIDEO</h4>
+            <div className="max-w-3xl mx-auto aspect-video">
+              <iframe
+                width="100%"
+                height="100%"
+                src={semental.videoUrl.replace("youtu.be/", "youtube.com/embed/").replace("?si=", "?").split("&")[0]}
+                title={`Video de ${semental.name}`}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="rounded-lg shadow-lg"
+              ></iframe>
+            </div>
+          </div>
+        )}
+        
         {/* Galería Section - Transformed to Carousel */}
         <div ref={sectionRefs.galeria} id="galeria" className="px-4 py-8">
           <h3 className="text-4xl font-bold text-primary mb-6">Galería</h3>

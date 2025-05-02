@@ -25,7 +25,7 @@ export default async function SementalPage({ params }: SementalPageProps) {
       description: "Precocidad y velocidad asegurada",
       breed: "Pura Sangre Inglés",
       color: "Castaño",
-      height: "Medidas",
+      height: "1,65m",
       born: "2011",
       origin: "SHAMARDAL X BENEVENTA (MOST WELCOME)",
       achievements: [],
@@ -147,7 +147,7 @@ export default async function SementalPage({ params }: SementalPageProps) {
       description: "Uno de los mejores caballos del siglo XXI en España",
       breed: "Pura Sangre Inglés",
       color: "Castaño",
-      height: "Medidas",
+      height: "1,63m",
       born: "2017",
       origin: "LOPE DE VEGA X SHORT AFFAIR (SINGSPIEL)",
       achievements: [],
@@ -188,9 +188,9 @@ export default async function SementalPage({ params }: SementalPageProps) {
         },
       ],
       producciones: [],
-      videoUrl: "/sementales/rodaballo/RODABALLO.mov",
+      videoUrl: "https://youtu.be/LqYRUVWlUBw?si=a26-faFERWavCZRe",
       testimonial:
-        '"Rodaballo era un caballo con mucha velocidad y un excelente cambio de ritmo. Corrió bien en todo tipo de terrenos y fue un caballo muy duro, con una cabeza privilegiada" Guillermo Arizkorreta',
+        '"Rodaballo era un caballo con mucha velocidad y un excelente cambio de ritmo. Corrió bien en todo tipo de terrenos y fue un caballo muy duro, con una cabeza privilegiada" -Guillermo Arizkorreta',
     },
   ]
 
