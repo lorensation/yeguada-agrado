@@ -32,8 +32,8 @@ export default function Navbar() {
       href: "/sementales",
       dropdown: true,
       items: [
-        { name: "Bow Creek", href: "/sementales#bow-creek" },
-        { name: "Rodaballo", href: "/sementales#rodaballo" },
+        { name: "Bow Creek", href: "/sementales/bowcreek" },
+        { name: "Rodaballo", href: "/sementales/rodaballo" },
       ],
     },
     {

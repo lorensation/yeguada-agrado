@@ -18,15 +18,12 @@ export default function Footer() {
               />
             </div>
             <h3 className="text-gold font-bold text-lg mb-4">Yeguada Agrado</h3>
-            <p className="text-gray-300 mb-4">Dedicados a la cría y doma de caballos de alta calidad desde 1985.</p>
+            <p className="text-gray-300 mb-4">Dedicados a la cría y doma de caballos de alta calidad desde hace más de 15 años.</p>
             <div className="flex space-x-4">
-              <Link href="#" className="text-white hover:text-gold transition-colors">
-                <Facebook className="h-5 w-5" />
-              </Link>
-              <Link href="#" className="text-white hover:text-gold transition-colors">
+              <Link href="https://www.instagram.com/yeguadaagrado" className="text-white hover:text-gold transition-colors">
                 <Instagram className="h-5 w-5" />
               </Link>
-              <Link href="#" className="text-white hover:text-gold transition-colors">
+              <Link href="https://x.com/yeguadaagrado" className="text-white hover:text-gold transition-colors">
                 <Twitter className="h-5 w-5" />
               </Link>
             </div>
@@ -36,32 +33,32 @@ export default function Footer() {
             <h3 className="text-gold font-bold text-lg mb-4">Enlaces Rápidos</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/" className="text-gray-300 hover:text-gold transition-colors">
+                <Link href="/" className="text-gray-300 hover:text-gold hover:underline transition-colors">
                   Inicio
                 </Link>
               </li>
               <li>
-                <Link href="/yeguada" className="text-gray-300 hover:text-gold transition-colors">
+                <Link href="/yeguada" className="text-gray-300 hover:text-gold hover:underline transition-colors">
                   Yeguada
                 </Link>
               </li>
               <li>
-                <Link href="/sementales" className="text-gray-300 hover:text-gold transition-colors">
+                <Link href="/sementales" className="text-gray-300 hover:text-gold hover:underline transition-colors">
                   Sementales
                 </Link>
               </li>
               <li>
-                <Link href="/servicios" className="text-gray-300 hover:text-gold transition-colors">
+                <Link href="/servicios" className="text-gray-300 hover:text-gold hover:underline transition-colors">
                   Servicios
                 </Link>
               </li>
               <li>
-                <Link href="/actualidad" className="text-gray-300 hover:text-gold transition-colors">
+                <Link href="/actualidad" className="text-gray-300 hover:text-gold hover:underline transition-colors">
                   Actualidad
                 </Link>
               </li>
               <li>
-                <Link href="/contacto" className="text-gray-300 hover:text-gold transition-colors">
+                <Link href="/contacto" className="text-gray-300 hover:text-gold hover:underline transition-colors">
                   Contacto
                 </Link>
               </li>
