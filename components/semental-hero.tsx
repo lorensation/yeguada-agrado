@@ -19,7 +19,7 @@ export default function SementalHero({ semental }: SementalProps) {
         <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
           <h2 className="text-5xl md:text-7xl font-bold text-primary hover:text-gold mb-2">{semental.name}</h2>
           <p className="text-xl md:text-2xl text-primary mb-4">{semental.tagline}</p>
-          <p className="text-xl font-bold text-gold">{semental.fee}</p>
+          <p className="text-xl font-bold text-primary">{semental.fee}</p>
         </div>
       </div>
     </div>

@@ -21,7 +21,7 @@ export default async function SementalPage({ params }: SementalPageProps) {
       tagline: "SHAMARDAL X BENEVENTA (MOST WELCOME)",
       fee: "2.500€ PV",
       year: "2023",
-      image: "/sementales/bowcreek/bowcreek1.jpg",
+      image: "/sementales/bowcreek/bowcreek5.jpg",
       description: "Precocidad y velocidad asegurada",
       breed: "Pura Sangre Inglés",
       color: "Castaño",
@@ -30,7 +30,7 @@ export default async function SementalPage({ params }: SementalPageProps) {
       origin: "SHAMARDAL X BENEVENTA (MOST WELCOME)",
       achievements: [],
       profile:
-        "BOW CREEK es hijo de SHAMARDAL, uno de los mejores caballos y sementales del siglo XXI y padre de sementales primer nivel mundial como LOPE DE VEGA, BLUE POINT, PINATUBO, EARTHLIGHT, VICTOR LUDORUM, …\n\nSu historial deportivo está al alcance de muy pocos sementales en España. Millero internacional triple ganador de Grupo, destacó a 3 años ganando su primer Grupo 2 en Gran Bretaña llamando la atención del gigante Godolphin, quien apostó por el brindándoles dos Grupos 2 más en Irlanda y Australia.\n\nEn su primera producción como semental en Francia destacó con caballos como BREIZH EAGLE (3º Poule d'Essai des Poulains G1 2021 y múltiple ganador de Listed Race) y el incansable WHAT'S UP en España (1º Gran Premio Cimera – Poule de Potros 2021 y triple colocado de Gran Premio a 3 años)\n\nPrecocidad y velocidad asegurada",
+        "BOW CREEK es hijo de SHAMARDAL, uno de los mejores caballos y sementales del siglo XXI y padre de sementales primer nivel mundial como LOPE DE VEGA, BLUE POINT, PINATUBO, EARTHLIGHT, VICTOR LUDORUM, …\n\nSu historial deportivo está al alcance de muy pocos sementales en España. Millero internacional triple ganador de Grupo, destacó a 3 años ganando su primer Grupo 2 en Gran Bretaña llamando la atención del gigante Godolphin, quien apostó por el brindándoles dos Grupos 2 más en Irlanda y Australia.\n\nEn su primera producción como semental en Francia destacó con caballos como BREIZH EAGLE (3º Poule d'Essai des Poulains G1 2021 y múltiple ganador de Listed Race) y el incansable WHAT'S UP en España (1º Gran Premio Cimera – Poule de Potros 2021 y triple colocado de Gran Premio a 3 años).\n\nPrecocidad y velocidad asegurada.",
       palmares: [
         {
           edad: "A 2 años",
@@ -135,7 +135,21 @@ export default async function SementalPage({ params }: SementalPageProps) {
           imagen: "/sementales/bowcreek/producciones/yorkshire.jpg",
         },
       ],
-      videoUrl: "",
+      videoUrl: "https://youtu.be/OYYTGyhMz9k?si=LBDo17-IAnGCqGZ3",
+      videos: [
+        {
+          url: "https://youtu.be/OYYTGyhMz9k?si=LBDo17-IAnGCqGZ3",
+          title: "Bow Creek - Celebration Mile 2014"
+        },
+        {
+          url: "https://youtu.be/40asc84bTXU?si=Ph-l2RjdGu0yER0H",
+          title: "Bow Creek - Peter Young Stakes 2016"
+        },
+        {
+          url: "https://youtu.be/XFmBD3IJ2S0?si=XSsBiJ7CTkt1GCER",
+          title: "Breizh Eagle - Prix Haras de Neuve 2021"
+        }
+      ]
     },
     {
       id: "rodaballo",
@@ -143,7 +157,7 @@ export default async function SementalPage({ params }: SementalPageProps) {
       tagline: "LOPE DE VEGA X SHORT AFFAIR (SINGSPIEL)",
       fee: "2.000€ PV",
       year: "2023",
-      image: "/sementales/rodaballo/rodaballo7.jpg",
+      image: "/sementales/rodaballo/rodaballo3.jpg",
       description: "Uno de los mejores caballos del siglo XXI en España",
       breed: "Pura Sangre Inglés",
       color: "Castaño",
@@ -189,6 +203,32 @@ export default async function SementalPage({ params }: SementalPageProps) {
       ],
       producciones: [],
       videoUrl: "https://youtu.be/LqYRUVWlUBw?si=a26-faFERWavCZRe",
+      videos: [
+        {
+          url: "https://youtu.be/LqYRUVWlUBw?si=a26-faFERWavCZRe",
+          title: "Rodaballo - Gran Premio Cimera 2020"
+        },
+        {
+          url: "https://youtu.be/59X74cg7-ig?si=9kScurFJj_n1qX3B",
+          title: "Rodaballo - Gran Premio Claudio Carudel 2021"
+        },
+        {
+          url: "https://youtu.be/T3KLOUlRNJs?si=7FrbNENdSiL-VwIj",
+          title: "Rodaballo - Kronimus Gruppe II 2021"
+        },
+        {
+          url: "https://youtu.be/3BBF4ei6zFs?si=awXSAy2GxINJ944H",
+          title: "Rodaballo - Gran Premio Antonio Blasco 2021"
+        },
+        {
+          url: "https://youtu.be/PzusCk0udv0?si=JKvxNPh-0YlBeWcl",
+          title: "Rodaballo - Gran Premio Antonio Blasco 2022"
+        },
+        {
+          url: "https://youtu.be/X-sBJ3YeL3g?si=D909cJnFG6O-BRfn",
+          title: "Rodaballo - Dubai Duty Free 2023"
+        }
+      ],
       testimonial:
         '"Rodaballo era un caballo con mucha velocidad y un excelente cambio de ritmo. Corrió bien en todo tipo de terrenos y fue un caballo muy duro, con una cabeza privilegiada" -Guillermo Arizkorreta',
     },

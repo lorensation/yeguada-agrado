@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { 
   Carousel,
   CarouselContent,
@@ -11,6 +12,13 @@ import {
 } from "@/components/ui/carousel"
 import { Separator } from "@/components/ui/separator"
 import { Button } from "./ui/button"
+import VideoCarousel from "./video-carousel"
+
+interface VideoItem {
+  url: string
+  title?: string
+  poster?: string
+}
 
 interface Produccion {
   nombre: string
@@ -44,6 +52,7 @@ interface SementalTabsProps {
     producciones?: Produccion[]
     image: string
     videoUrl?: string
+    videos?: VideoItem[]
     testimonial?: string
     images?: string[]
   }
@@ -59,14 +68,16 @@ export default function SementalTabs({ semental }: SementalTabsProps) {
     "ficha-origen": useRef<HTMLDivElement>(null),
     palmares: useRef<HTMLDivElement>(null),
     producciones: useRef<HTMLDivElement>(null),
+    videos: useRef<HTMLDivElement>(null),
     galeria: useRef<HTMLDivElement>(null),
   }
 
   const tabs = [
     { id: "perfil", label: "Perfil" },
-    { id: "ficha-origen", label: "Ficha de Origen" },
+    { id: "ficha-origen", label: "Pedigree" },
     { id: "palmares", label: "Palmarés" },
-    { id: "producciones", label: "Mejores Producciones" },
+    { id: "producciones", label: "Mejor Producción" },
+    { id: "videos", label: "Vídeos" },
     { id: "galeria", label: "Galería" },
   ]
 
@@ -171,28 +182,11 @@ export default function SementalTabs({ semental }: SementalTabsProps) {
         {/* Perfil Section */}
         <div ref={sectionRefs.perfil} id="perfil" className="px-4 py-8">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-            <div className="md:col-span-7">
-              <h1 className="text-5xl md:text-6xl font-bold text-contrast uppercase tracking-wide mb-2">{semental.name}</h1>
+            {/* Left side - Name and Profile Text */}
+            <div className="md:col-span-5">
+              <h1 className="text-5xl md:text-6xl font-bold text-contrast uppercase tracking-wide mb-6">{semental.name}</h1>
               
-              {semental.origin && (
-                <p className="text-2xl text-primary mb-6 italic">{semental.origin}</p>
-              )}
-              
-              <div className="mb-8 text-lg">
-                <div className="flex gap-x-3 gap-y-3">
-                  {semental.born && (
-                    <p className="text-primary">{semental.born} |</p>
-                  )}
-                  {semental.height && (
-                    <p className="text-primary">{semental.height} |</p>
-                  )}
-                  {semental.fee && (
-                    <p className="text-primary">{semental.fee}</p>
-                  )}
-                </div>
-              </div>
-              
-              <div className="text-primary text-lg mb-6 whitespace-pre-line">
+              <div className="text-primary text-lg mb-6 whitespace-pre-line pr-8">
                 {semental.profile && semental.profile.split('\n').map((paragraph, idx) => (
                   <p key={idx} className="mb-4">{paragraph}</p>
                 ))}
@@ -211,33 +205,89 @@ export default function SementalTabs({ semental }: SementalTabsProps) {
                   </ul>
                 </div>
               )}
+              {/* Testimonial */}
+              {semental.testimonial && (
+                <div className="p-4 border-l-4 border-gold bg-primary/5 flex items-center gap-4">
+                  <div className="relative h-14 w-14 rounded-full overflow-hidden flex-shrink-0 border-2 border-gold">
+                    <Image 
+                      src={`/sementales/${semental.id.toLowerCase()}/testimonial-avatar.jpg`}
+                      alt="Testimonial"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div>
+                    <p className="text-primary italic text-lg">{semental.testimonial}</p>
+                  </div>
+                </div>
+              )}
             </div>
-            <div className="md:col-span-5 relative w-[800px] h-[400px] md:h-[600px] rounded-lg overflow-hidden shadow-lg">
-              <Image 
-                src={defaultProfileImage || "/placeholder.svg"} 
-                alt={semental.name} 
-                fill 
-                className="object-cover" 
-                priority
-              />
-            </div>
-          </div>
-          
-          {semental.testimonial && (
-            <div className="mt-8 p-6 border-l-4 w-full border-gold bg-primary/5 flex items-center gap-6">
-              <div className="relative h-16 w-16 rounded-full overflow-hidden flex-shrink-0 border-2 border-gold">
+            
+            {/* Right side - Image and Details */}
+            <div className="md:col-span-7 flex flex-col">
+              <div className="relative w-full h-[400px] md:h-[500px] rounded-lg overflow-hidden shadow-lg mb-4">
                 <Image 
-                  src={`/sementales/${semental.id.toLowerCase()}/testimonial-avatar.jpg`}
-                  alt="Testimonial"
-                  fill
-                  className="object-cover"
+                  src={defaultProfileImage || "/placeholder.svg"} 
+                  alt={semental.name} 
+                  fill 
+                  className="object-cover" 
+                  priority
                 />
               </div>
-              <div>
-                <p className="text-primary italic text-xl mb-2">{semental.testimonial}</p>
+              
+              {/* Details under the image */}
+              <div className="bg-primary/5 p-4 rounded-lg mb-4">
+                {semental.origin && (
+                  <div className="mb-2">
+                    <span className="text-primary font-bold text-xl italic">{semental.origin}</span>
+                  </div>
+                )}
+                
+                <div className="grid grid-cols-2 gap-2">
+                  {semental.born && (
+                    <div>
+                      <span className="text-primary">{semental.born}</span>
+                    </div>
+                  )}
+                  {semental.height && (
+                    <div>
+                      <span className="text-primary">{semental.height}</span>
+                    </div>
+                  )}
+                  {semental.fee && (
+                    <div className="col-span-2 mt-2">
+                      <span className="text-primary font-bold">{semental.fee}</span>
+                    </div>
+                  )}
+                </div>
+              </div>
+              
+              {/* Buttons */}
+              <div className="flex flex-col sm:flex-row gap-3 mb-4">
+                <Link href={"/contacto"}>
+                  <Button
+                    className="bg-primary hover:bg-primary/80 text-white py-3 px-20 rounded-md transition-all flex items-center justify-center gap-2 flex-1"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    Contáctanos para más información
+                  </Button>
+                </Link>
+                <Button
+                  onClick={() => window.open(`/sementales/${semental.id.toLowerCase()}/pedigree.pdf`, "_blank")}
+                  className="bg-gold hover:bg-gold/80 text-white py-3 px-4 rounded-md transition-all flex items-center justify-center gap-2 flex-1"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                  </svg>
+                  Descargar PDF del Pedigree
+                </Button>
               </div>
             </div>
-          )}
+          </div>
           
           <Separator className="my-8 bg-contrast/30" />
         </div>
@@ -306,7 +356,17 @@ export default function SementalTabs({ semental }: SementalTabsProps) {
                   <div className="space-y-2">
                     {semental.palmares.map((item, index) => (
                       <div key={index} className="pb-6 mb-6 last:mb-0">
-                        <h4 className="text-2xl font-semibold text-primary mb-4">{item.edad}</h4>
+                        <h4 className="text-2xl font-semibold text-primary mb-4">
+                          {item.edad}
+                          {semental.id === "rodaballo" && item.edad === "A 4 años" && (
+                            <span className="inline-flex items-center ml-3 text-gold">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 mr-1">
+                                <path fillRule="evenodd" d="M5.166 2.621v.858c-1.035.148-2.059.33-3.071.543a.75.75 0 0 0-.584.859 6.753 6.753 0 0 0 6.138 5.6 6.73 6.73 0 0 0 2.743 1.346A6.707 6.707 0 0 1 9.279 15H8.54c-1.036 0-1.875.84-1.875 1.875V19.5h-.75a2.25 2.25 0 0 0-2.25 2.25c0 .414.336.75.75.75h15a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-2.25-2.25h-.75v-2.625c0-1.036-.84-1.875-1.875-1.875h-.739a6.706 6.706 0 0 1-1.112-3.173 6.73 6.73 0 0 0 2.743-1.347 6.753 6.753 0 0 0 6.139-5.6.75.75 0 0 0-.585-.858 47.077 47.077 0 0 0-3.07-.543V2.62a.75.75 0 0 0-.658-.744 49.22 49.22 0 0 0-6.093-.377c-2.063 0-4.096.128-6.093.377a.75.75 0 0 0-.657.744Zm0 2.629c0 1.196.312 2.32.857 3.294A5.266 5.266 0 0 1 3.16 5.337a45.6 45.6 0 0 1 2.006-.343v.256Zm13.5 0v-.256c.674.1 1.343.214 2.006.343a5.265 5.265 0 0 1-2.863 3.207 6.72 6.72 0 0 0 .857-3.294Z" clipRule="evenodd" />
+                              </svg>
+                              <span className="font-bold">Mejor Caballo del Año</span>
+                            </span>
+                          )}
+                        </h4>
                         <ul className="space-y-2">
                           {item.logros.map((logro, idx) => (
                             <li key={idx} className="flex items-start">
@@ -398,11 +458,15 @@ export default function SementalTabs({ semental }: SementalTabsProps) {
           
           <Separator className="my-8 bg-contrast/30" />
         </div>
-
-        {semental.videoUrl && (
-          <div className="mt-12 mb-10">
-            <h4 className="text-2xl font-bold text-primary mb-4">VIDEO</h4>
-            <div className="max-w-3xl mx-auto aspect-video">
+          
+        {/* Videos Section */}
+        <div ref={sectionRefs.videos} id="videos" className="px-4 py-8">
+          <h3 className="text-4xl font-bold text-primary mb-6">Vídeos</h3>
+          
+          {semental.videos && semental.videos.length > 0 ? (
+            <VideoCarousel videos={semental.videos} className="mb-8" />
+          ) : semental.videoUrl ? (
+            <div className="max-w-3xl mx-auto aspect-video mb-8">
               <iframe
                 width="100%"
                 height="100%"
@@ -414,8 +478,12 @@ export default function SementalTabs({ semental }: SementalTabsProps) {
                 className="rounded-lg shadow-lg"
               ></iframe>
             </div>
-          </div>
-        )}
+          ) : (
+            <p className="text-primary mb-8">No hay videos disponibles para este semental.</p>
+          )}
+          
+          <Separator className="my-8 bg-contrast/30" />
+        </div>
         
         {/* Galería Section - Transformed to Carousel */}
         <div ref={sectionRefs.galeria} id="galeria" className="px-4 py-8">

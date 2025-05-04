@@ -18,6 +18,7 @@ export default function Navbar() {
   }
 
   const menuItems = [
+    { name: "Inicio", href: "/", dropdown: false },
     {
       name: "Yeguada",
       href: "/yeguada",
@@ -25,6 +26,7 @@ export default function Navbar() {
       items: [
         { name: "Historia", href: "/yeguada#historia" },
         { name: "Instalaciones", href: "/yeguada#instalaciones" },
+        { name: "Nacimientos", href: "/yeguada#nacimientos" },
       ],
     },
     {
@@ -54,16 +56,15 @@ export default function Navbar() {
   return (
     <nav className="bg-background border-b border-gray-800">
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-32">
           <Link href="/" className="flex items-center">
             <Image
               src="/logo-white.jpg"
               alt="Yeguada Agrado Logo"
-              width={160}
-              height={160}
+              width={240}
+              height={240}
               className="mr-3"
             />
-            <span className="text-primary hover:text-gold font-bold text-xl">Yeguada Agrado</span>
           </Link>
 
           {/* Desktop Menu */}

@@ -41,9 +41,9 @@ export default function SementalesPage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-background/30 to-transparent">
                 <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
-                  <h2 className="text-4xl md:text-6xl font-bold text-gold mb-2">{semental.name}</h2>
+                  <h2 className="text-4xl md:text-6xl font-bold text-primary mb-2">{semental.name}</h2>
                   <p className="text-xl md:text-2xl text-primary mb-4">{semental.tagline}</p>
-                  <p className="text-xl font-bold text-gold mb-6">{semental.fee}</p>
+                  <p className="text-xl font-bold text-primary mb-6">{semental.fee}</p>
 
                   <div className="flex flex-wrap gap-4">
                     <Link

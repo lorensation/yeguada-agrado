@@ -9,12 +9,12 @@ export default function HeroCarousel() {
 
   const slides = [
     {
-      image: "/hero/hero2.jpg",
+      image: "/hero/hero1.jpg",
       title: "Bienvenidos a Yeguada Agrado",
       description: "Tradición y excelencia en la cría de caballos de pura raza",
     },
     {
-      image: "/hero/hero1.jpg",
+      image: "/hero/hero2.jpg",
       title: "Bienvenidos a Yeguada Agrado",
       description: "Tradición y excelencia en la cría de caballos de pura raza",
     },
@@ -24,12 +24,12 @@ export default function HeroCarousel() {
       description: "Ejemplares seleccionados para garantizar la mejor genética",
     },
     {
-      image: "/hero/hero4.jpeg",
+      image: "/hero/hero4.jpg",
       title: "Servicios Profesionales",
       description: "Cría, doma y cuidados con los más altos estándares",
     },
     {
-      image: "/hero/hero5.jpeg",
+      image: "/hero/hero5.jpg",
       title: "Servicios Profesionales",
       description: "Cría, doma y cuidados con los más altos estándares",
     },

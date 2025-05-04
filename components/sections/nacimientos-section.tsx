@@ -25,7 +25,7 @@ export default function NacimientosSection() {
         sex: "M",
         color: "al",
         date: "23/02/2025",
-        image: "/placeholder.svg?height=300&width=400&query=potro+alazan",
+        image: "/nacimientos/2025/samay.jpg",
         year: "2025",
       },
       {
@@ -34,7 +34,7 @@ export default function NacimientosSection() {
         sex: "M",
         color: "cas",
         date: "10/03/2025",
-        image: "/placeholder.svg?height=300&width=400&query=potro+castano",
+        image: "/nacimientos/2025/quickartist.jpg",
         year: "2025",
       },
       {
@@ -43,7 +43,7 @@ export default function NacimientosSection() {
         sex: "H",
         color: "n",
         date: "21/03/2025",
-        image: "/placeholder.svg?height=300&width=400&query=potra+negra",
+        image: "/nacimientos/2025/mitra.jpg",
         year: "2025",
       },
       {
@@ -52,7 +52,7 @@ export default function NacimientosSection() {
         sex: "H",
         color: "cas",
         date: "26/03/2025",
-        image: "/placeholder.svg?height=300&width=400&query=potra+castana",
+        image: "/nacimientos/2025/ladymoon.jpeg",
         year: "2025",
       },
       {
@@ -61,16 +61,16 @@ export default function NacimientosSection() {
         sex: "H",
         color: "n",
         date: "30/03/2025",
-        image: "/placeholder.svg?height=300&width=400&query=potra+negra",
+        image: "/nacimientos/2025/linda.jpg",
         year: "2025",
       },
       {
-        name: "RULER OF THE WORLD X CRMBLECREEK",
+        name: "RULER OF THE WORLD X CRUMBLECREEK",
         parentage: "(SIR PRANCELOT)",
         sex: "M",
         color: "cas",
         date: "07/04/2025",
-        image: "/placeholder.svg?height=300&width=400&query=potro+castano",
+        image: "/nacimientos/2025/crumblecreek.jpg",
         year: "2025",
       },
       {
@@ -79,7 +79,7 @@ export default function NacimientosSection() {
         sex: "M",
         color: "cas",
         date: "10/04/2025",
-        image: "/placeholder.svg?height=300&width=400&query=potro+castano",
+        image: "/nacimientos/2025/musiquesacree.jpg",
         year: "2025",
       },
       {
@@ -88,7 +88,7 @@ export default function NacimientosSection() {
         sex: "H",
         color: "cas",
         date: "14/04/2025",
-        image: "/placeholder.svg?height=300&width=400&query=potra+castana",
+        image: "/nacimientos/2025/starlightmistery.jpg",
         year: "2025",
       },
       {
@@ -97,39 +97,10 @@ export default function NacimientosSection() {
         sex: "M",
         color: "cas",
         date: "19/04/2025",
-        image: "/placeholder.svg?height=300&width=400&query=potro+castano",
+        image: "/nacimientos/2025/galdana.jpg",
         year: "2025",
       },
     ],
-    "2024": [
-      {
-        name: "ECTOT X LOVELY MOON",
-        parentage: "(KENDARGENT)",
-        sex: "H",
-        color: "tor",
-        date: "12/03/2024",
-        image: "/placeholder.svg?height=300&width=400&query=potra+torda",
-        year: "2024",
-      },
-      {
-        name: "MEHMAS X RITZY GAL",
-        parentage: "(HOLY ROMAN EMPEROR)",
-        sex: "M",
-        color: "cas",
-        date: "05/04/2024",
-        image: "/placeholder.svg?height=300&width=400&query=potro+castano",
-        year: "2024",
-      },
-      {
-        name: "KODIAC X SOLAR GLITTER",
-        parentage: "(GALILEO)",
-        sex: "H",
-        color: "al",
-        date: "27/04/2024",
-        image: "/placeholder.svg?height=300&width=400&query=potra+alazana",
-        year: "2024",
-      },
-    ]
   };
 
   const nacimientos = nacimientosData[activeYear as keyof typeof nacimientosData] || [];
@@ -175,10 +146,6 @@ export default function NacimientosSection() {
     <section id="nacimientos" className="py-16 w-full overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 mb-10">
         <h2 className="text-3xl font-bold text-primary mb-6 text-center hover:text-gold">Últimos Nacimientos</h2>
-        <p className="text-contrast text-center max-w-3xl mx-auto">
-          Celebramos con orgullo la llegada de nuevos potros a nuestra yeguada, fruto de cuidadosas selecciones genéticas
-          y de nuestro compromiso con la excelencia.
-        </p>
       </div>
       
       <div className="max-w-7xl mx-auto px-4 mb-6">
@@ -218,7 +185,7 @@ export default function NacimientosSection() {
               nacimientos.map((item, index) => (
                 <CarouselItem key={index} className="pl-2 md:pl-4 sm:basis-1/2 md:basis-1/3 lg:basis-1/3">
                   <Card className="bg-contrast/5 rounded-lg overflow-hidden h-full flex flex-col">
-                    <div className="relative h-64 w-full">
+                    <div className="relative h-72 w-full">
                       <Image 
                         src={item.image || "/placeholder.svg"} 
                         alt={item.name} 
@@ -247,8 +214,8 @@ export default function NacimientosSection() {
           </CarouselContent>
           {nacimientos.length > 3 && (
             <div className="flex justify-center gap-4 mt-8">
-              <CarouselPrevious className="relative static translate-y-0 left-0 bg-contrast/10 hover:bg-contrast/20 text-primary border-primary" />
-              <CarouselNext className="relative static translate-y-0 right-0 bg-contrast/10 hover:bg-contrast/20 text-primary border-primary" />
+              <CarouselPrevious className="static translate-y-0 left-0 bg-contrast/10 hover:bg-contrast/20 text-primary border-primary" />
+              <CarouselNext className="static translate-y-0 right-0 bg-contrast/10 hover:bg-contrast/20 text-primary border-primary" />
             </div>
           )}
         </Carousel>
