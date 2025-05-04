@@ -124,7 +124,7 @@ export default function CookieForm() {
       <div className="p-5">
         {/* Header */}
         <div className="flex justify-between items-start mb-4">
-          <h3 className="text-lg font-semibold text-white">Política de Cookies</h3>
+          <h3 className="text-lg font-semibold text-primary">Política de Cookies</h3>
           <button 
             onClick={() => setVisible(false)}
             className="text-gray-400 hover:text-gray-500 focus:outline-none"
