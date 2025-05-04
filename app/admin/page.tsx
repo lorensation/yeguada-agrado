@@ -72,10 +72,8 @@ export default function AdminDashboard() {
         </Button>
       </div>
       <div className="mb-10 text-center">
-        <Link href={"/admin/articles"}>
-            <Button className="text-white hover:underline">
-                Ir a la gestión de artículos
-            </Button>
+        <Link href={"/admin/articles"} className="bg-primary hover:bg-primary/80 text-white py-2 px-6 rounded-md transition-colors">
+            Ir a la gestión de artículos
         </Link>
       </div>
     </div>
