@@ -13,7 +13,8 @@ export default function Footer() {
                 src="/logo.jpg" 
                 alt="Yeguada Agrado Logo" 
                 width={120} 
-                height={120} 
+                height={120}
+                priority
                 className="rounded-lg object-cover"
               />
             </div>
@@ -73,6 +74,25 @@ export default function Footer() {
               <p><a href="https://wa.me/34616053904">Teléfono: +34 616 05 39 04</a></p>
               <p>Email: info@yeguada-agrado.es</p>
             </address>
+            
+            <h3 className="text-gold font-bold text-lg mt-6 mb-4">Legal</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/legal" className="text-gray-300 hover:text-gold hover:underline transition-colors">
+                  Aviso Legal
+                </Link>
+              </li>
+              <li>
+                <Link href="/politica-privacidad" className="text-gray-300 hover:text-gold hover:underline transition-colors">
+                  Política de Privacidad
+                </Link>
+              </li>
+              <li>
+                <Link href="/cookies" className="text-gray-300 hover:text-gold hover:underline transition-colors">
+                  Política de Cookies
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
 

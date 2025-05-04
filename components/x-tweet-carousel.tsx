@@ -57,7 +57,6 @@ export default function XTweetCarousel({ className }: XTweetCarouselProps) {
       if (cachedTweets) {
         try {
           const parsedTweets = JSON.parse(cachedTweets)
-          console.log('Using cached tweets data')
           setTweets(parsedTweets)
           setLoading(false)
           return

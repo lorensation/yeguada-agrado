@@ -63,7 +63,8 @@ export default function Navbar() {
               alt="Yeguada Agrado Logo"
               width={240}
               height={240}
-              className="mr-3"
+              priority
+              className="mr-3 object-cover"
             />
           </Link>
 

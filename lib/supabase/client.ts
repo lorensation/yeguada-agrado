@@ -7,6 +7,38 @@ const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
 // Create a single supabase client for interacting with your database
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
+// Auth functions
+export const signIn = async (email: string, password: string) => {
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email,
+    password,
+  });
+  
+  return { data, error };
+};
+
+export const signOut = async () => {
+  try {
+    // Clear the session in Supabase
+    const { error } = await supabase.auth.signOut();
+    
+    // Also clear the cookie by calling our API endpoint
+    await fetch('/api/auth/session/clear', {
+      method: 'POST',
+    });
+    
+    return { error };
+  } catch (error) {
+    console.error('Error signing out:', error);
+    return { error };
+  }
+};
+
+export const getCurrentUser = async () => {
+  const { data: { user }, error } = await supabase.auth.getUser();
+  return { user, error };
+};
+
 // Storage bucket name
 export const IMAGES_BUCKET = 'images';
 
@@ -137,6 +169,23 @@ export const getArticleBySlug = async (slug: string): Promise<{ article: Article
     return { article: data as Article, error: null };
   } catch (error) {
     console.error('Error fetching article: ', error);
+    return { article: null, error: error as Error };
+  }
+};
+
+export const getArticleById = async (id: string): Promise<{ article: Article | null; error: Error | null }> => {
+  try {
+    const { data, error } = await supabase
+      .from('articles')
+      .select('*')
+      .eq('id', id)
+      .single();
+      
+    if (error) throw error;
+    
+    return { article: data as Article, error: null };
+  } catch (error) {
+    console.error('Error fetching article by ID: ', error);
     return { article: null, error: error as Error };
   }
 };

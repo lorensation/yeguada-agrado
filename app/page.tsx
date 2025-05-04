@@ -1,6 +1,7 @@
 import HeroCarousel from "@/components/hero-carousel"
 import FeaturedQuote from "@/components/featured-quote"
 import XTweetCarousel from "@/components/x-tweet-carousel"
+import VideoCarousel from "@/components/video-carousel"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -59,6 +60,27 @@ export default function Home() {
             </div>
           </Link>
         </div>
+      </div>
+      
+      {/* Video Carousel Section */}
+      <div className="container mx-auto mt-20 px-4">
+        <VideoCarousel 
+          videos={[
+            {
+              url: "https://youtu.be/8idRNG0vjNg?si=ncfKXxJl7LL4oW88",
+              title: "Yeguada Agrado - Instalaciones"
+            },
+            {
+              url: "https://youtu.be/vLICvA4nNpI?si=vzPkYCr5akPz_gnX",
+              title: "Yeguada Agrado - Sementales"
+            },
+            {
+              url: "https://youtu.be/LqYRUVWlUBw?si=XWAbucNqrL8XYCLz",
+              title: "Yeguada Agrado - Nacimientos"
+            }
+          ]}
+          className="mb-8"
+        />
       </div>
       
       <div className="container mx-auto px-4">
