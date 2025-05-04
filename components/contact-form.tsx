@@ -79,7 +79,7 @@ export default function ContactForm() {
               onChange={handleChange}
               required
               disabled={status === "submitting"}
-              className="w-full px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md 
+              className="w-full px-4 py-2 text-primary bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md 
                 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent
                 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
               aria-describedby="name-required"
@@ -98,7 +98,7 @@ export default function ContactForm() {
               onChange={handleChange}
               required
               disabled={status === "submitting"}
-              className="w-full px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md 
+              className="w-full px-4 py-2 text-primary bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md 
                 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent
                 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
             />
@@ -116,7 +116,7 @@ export default function ContactForm() {
             value={formData.phone}
             onChange={handleChange}
             disabled={status === "submitting"}
-            className="w-full px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md 
+            className="w-full px-4 py-2 text-primary bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md 
               focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent
               transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
           />
@@ -158,7 +158,7 @@ export default function ContactForm() {
             required
             disabled={status === "submitting"}
             rows={5}
-            className="w-full px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md 
+            className="w-full px-4 py-2 text-primary bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md 
               focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent
               transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
           ></textarea>

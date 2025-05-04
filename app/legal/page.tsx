@@ -7,7 +7,7 @@ export default function AvisoLegalPage() {
       
       <div className="mt-12 prose prose-lg max-w-none">
         <div className="bg-gray-50 dark:bg-gray-900 p-8 rounded-lg shadow-md">
-          <p className="mb-6">
+          <p className="mb-6 text-primary">
             YEGUADA AGRADO, responsable del sitio web, en adelante RESPONSABLE, pone a disposición de los usuarios 
             el presente documento, con el que pretende dar cumplimiento a las obligaciones dispuestas en la 
             Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio 
@@ -15,20 +15,20 @@ export default function AvisoLegalPage() {
             son las condiciones de uso.
           </p>
           
-          <p className="mb-6">
+          <p className="mb-6 text-primary">
             Toda persona que acceda a este sitio web asume el papel de usuario, comprometiéndose a la 
             observancia y cumplimiento riguroso de las disposiciones aquí dispuestas, así como a cualquier 
             otra disposición legal que fuera de aplicación.
           </p>
           
-          <p className="mb-6">
+          <p className="mb-6 text-primary">
             YEGUADA AGRADO, S.L., se reserva el derecho de modificar cualquier tipo de información que pudiera aparecer 
             en el sitio web, sin que exista obligación de preavisar o poner en conocimiento de los usuarios 
             dichas obligaciones, entendiéndose como suficiente con la publicación en el sitio web de YEGUADA AGRADO, S.L.
           </p>
           
           <h2 className="text-xl font-bold text-primary mt-8 mb-4">Datos Identificativos</h2>
-          <ul className="list-disc pl-6 mb-6">
+          <ul className="list-disc text-primary pl-6 mb-6">
             <li><strong>Denominación social:</strong> AGRADO, SL.</li>
             <li><strong>Nombre comercial:</strong> YEGUADA AGRADO</li>
             <li><strong>NIF:</strong> B28181329</li>
@@ -37,13 +37,13 @@ export default function AvisoLegalPage() {
           </ul>
           
           <h2 className="text-xl font-bold text-primary mt-8 mb-4">Objeto</h2>
-          <p className="mb-6">
+          <p className="mb-6 text-primary">
             A través del Sitio Web, les ofrecemos a los Usuarios la posibilidad de acceder a la información 
             sobre nuestros servicios.
           </p>
           
           <h2 className="text-xl font-bold text-primary mt-8 mb-4">Privacidad y Tratamiento de Datos</h2>
-          <p className="mb-6">
+          <p className="mb-6 text-primary">
             Cuando para el acceso a determinados contenidos o servicio sea necesario facilitar datos de carácter 
             personal, los Usuarios garantizarán su veracidad, exactitud, autenticidad y vigencia. La empresa dará 
             a dichos datos el tratamiento automatizado que corresponda en función de su naturaleza o finalidad, 
@@ -51,7 +51,7 @@ export default function AvisoLegalPage() {
           </p>
           
           <h2 className="text-xl font-bold text-primary mt-8 mb-4">Propiedad Industrial e Intelectual</h2>
-          <p className="mb-6">
+          <p className="mb-6 text-primary">
             El Usuario reconoce y acepta que todos los contenidos que se muestran en el Espacio Web y en especial, 
             diseños, textos, imágenes, logos, iconos, botones, software, nombres comerciales, marcas, o cualesquiera 
             otros signos susceptibles de utilización industrial y/o comercial están sujetos a derechos de Propiedad 
@@ -63,7 +63,7 @@ export default function AvisoLegalPage() {
             manteniendo indemne a la empresa de cualquier reclamación que se derive del incumplimiento de tales obligaciones.
           </p>
           
-          <p className="mb-6">
+          <p className="mb-6 text-primary">
             En ningún caso el acceso al Espacio Web implica ningún tipo de renuncia, transmisión, licencia o cesión total 
             ni parcial de dichos derechos, salvo que se establezca expresamente lo contrario. Las presentes Condiciones 
             Generales de Uso del Espacio Web no confieren a los Usuarios ningún otro derecho de utilización, alteración, 
@@ -73,7 +73,7 @@ export default function AvisoLegalPage() {
             los derechos afectados.
           </p>
           
-          <p className="mb-6">
+          <p className="mb-6 text-primary">
             Los contenidos, textos, fotografías, diseños, logotipos, imágenes, programas de ordenador, códigos fuente y, 
             en general, cualquier creación intelectual existente en este Espacio, así como el propio Espacio en su conjunto, 
             como obra artística multimedia, están protegidos como derechos de autor por la legislación en materia de propiedad 
@@ -85,7 +85,7 @@ export default function AvisoLegalPage() {
             se cuente con la autorización previa, por escrito, de la citada Entidad.
           </p>
           
-          <p className="mb-6">
+          <p className="mb-6 text-primary">
             Asimismo queda prohibido suprimir, eludir y/o manipular el «copyright» así como los dispositivos técnicos de 
             protección, o cualesquiera mecanismos de información que pudieren contener los contenidos. El Usuario de este 
             Espacio Web se compromete a respetar los derechos enunciados y a evitar cualquier actuación que pudiera perjudicarlos, 
@@ -94,17 +94,17 @@ export default function AvisoLegalPage() {
           </p>
           
           <h2 className="text-xl font-bold text-primary mt-8 mb-4">Obligaciones y Responsabilidades del Usuario del Espacio Web</h2>
-          <p className="mb-4">El Usuario se compromete a:</p>
+          <p className="mb-4" text-primary>El Usuario se compromete a:</p>
           
-          <ul className="list-disc pl-6 mb-6">
+          <ul className="list-disc text-primary pl-6 mb-6">
             <li>Hacer un uso adecuado y lícito del Espacio Web así como de los contenidos y servicios, de conformidad con: (i) la legislación aplicable en cada momento; (ii) las Condiciones Generales de Uso del Espacio Web; (iii) la moral y buenas costumbres generalmente aceptadas y (iv) el orden público.</li>
             <li>Proveerse de todos los medios y requerimientos técnicos que se precisen para acceder al Espacio Web.</li>
             <li>Facilitar información veraz al cumplimentar con sus datos de carácter personal los formularios contenidos en el Espacio Web y a mantenerlos actualizados en todo momento de forma que responda, en cada momento, a la situación real del Usuario. El Usuario será el único responsable de las manifestaciones falsas o inexactas que realice y de los perjuicios que cause a la empresa o a terceros por la información que facilite.</li>
           </ul>
           
-          <p className="mb-4">No obstante lo establecido en el apartado anterior el Usuario deberá asimismo abstenerse de:</p>
+          <p className="mb-4 text-primary">No obstante lo establecido en el apartado anterior el Usuario deberá asimismo abstenerse de:</p>
           
-          <ul className="list-disc pl-6 mb-6">
+          <ul className="list-disc text-primary pl-6 mb-6">
             <li>Hacer un uso no autorizado o fraudulento del Espacio Web y/o de los contenidos con fines o efectos ilícitos, prohibidos en las presentes Condiciones Generales de Uso, lesivos de los derechos e intereses de terceros, o que de cualquier forma puedan dañar, inutilizar, sobrecargar, deteriorar o impedir la normal utilización de los servicios o los documentos, archivos y toda clase de contenidos almacenados en cualquier equipo informático.</li>
             <li>Acceder o intentar acceder a recursos o áreas restringidas del Espacio Web, sin cumplir las condiciones exigidas para dicho acceso.</li>
             <li>Provocar daños en los sistemas físicos o lógicos del Espacio Web, de sus proveedores o de terceros.</li>
@@ -116,14 +116,14 @@ export default function AvisoLegalPage() {
           </ul>
           
           <h2 className="text-xl font-bold text-primary mt-8 mb-4">Responsabilidades</h2>
-          <p className="mb-6">
+          <p className="mb-6 text-primary">
             No se garantiza el acceso continuado, ni la correcta visualización, descarga o utilidad de los elementos e 
             informaciones contenidas en la web que puedan verse impedidos, dificultados o interrumpidos por factores o 
             circunstancias que están fuera de su control. No se hace responsable de las decisiones que pudieran adoptarse 
             como consecuencia del acceso a los contenidos o informaciones ofrecidas.
           </p>
           
-          <p className="mb-6">
+          <p className="mb-6 text-primary">
             Se podrá interrumpir el servicio, o resolver de modo inmediato la relación con el Usuario, si se detecta que 
             un uso de su Espacio Web, o de cualquiera de los servicios ofertados en el mismo, es contrario a las presentes 
             Condiciones Generales de Uso. No nos hacemos responsables por daños, perjuicios, pérdidas, reclamaciones o 
@@ -131,13 +131,13 @@ export default function AvisoLegalPage() {
           </p>
           
           <h2 className="text-xl font-bold text-primary mt-8 mb-4">Hipervínculos</h2>
-          <p className="mb-6">
+          <p className="mb-6 text-primary">
             El Usuario se obliga a no reproducir de ningún modo, ni siquiera mediante un hiperenlace o hipervínculo, 
             el Espacio Web, así como ninguno de sus contenidos, salvo autorización expresa y por escrito del responsable 
             del fichero.
           </p>
           
-          <p className="mb-6">
+          <p className="mb-6 text-primary">
             El Espacio Web puede incluir enlaces a otros espacios web, gestionados por terceros, con objeto de facilitar 
             el acceso del Usuario a la información de empresas colaboradoras y/o patrocinadoras. Conforme con ello, la 
             sociedad no se responsabiliza del contenido de dichos Espacios web, ni se sitúa en una posición de garante 
@@ -146,7 +146,7 @@ export default function AvisoLegalPage() {
           </p>
           
           <h2 className="text-xl font-bold text-primary mt-8 mb-4">Protección de Datos</h2>
-          <p className="mb-6">
+          <p className="mb-6 text-primary">
             Para utilizar algunos de los Servicios, el Usuario debe proporcionar previamente ciertos datos de carácter 
             personal. La empresa tratará automatizadamente estos datos y aplicará las correspondientes medidas de seguridad, 
             todo ello en cumplimiento del RGPD, LOPDGDD y LSSI. El Usuario puede acceder a la política seguida en el tratamiento 
@@ -155,17 +155,17 @@ export default function AvisoLegalPage() {
           </p>
           
           <h2 className="text-xl font-bold text-primary mt-8 mb-4">Cookies</h2>
-          <p className="mb-6">
+          <p className="mb-6 text-primary">
             La empresa se reserva el derecho de utilizar la tecnología "cookie" en el Espacio Web, a fin de reconocerlo 
             como Usuario frecuente y personalizar el uso que realice del Espacio Web mediante la preselección de su idioma, 
             o contenidos más deseados o específicos.
           </p>
           
-          <p className="mb-6">
+          <p className="mb-6 text-primary">
             Las cookies recopilan la dirección IP del usuario siendo Google el responsable del tratamiento de esta información.
           </p>
           
-          <p className="mb-6">
+          <p className="mb-6 text-primary">
             Las cookies son ficheros enviados a un navegador, por medio de un servidor Web, para registrar la navegación 
             del Usuario en el Espacio Web, cuando el Usuario permita su recepción. Si usted lo desea puede configurar su 
             navegador para ser avisado en pantalla de la recepción de cookies y para impedir la instalación de cookies 
@@ -173,7 +173,7 @@ export default function AvisoLegalPage() {
           </p>
           
           <h2 className="text-xl font-bold text-primary mt-8 mb-4">Declaraciones y Garantías</h2>
-          <p className="mb-6">
+          <p className="mb-6 text-primary">
             En general, los contenidos y servicios ofrecidos en el Espacio Web tienen carácter meramente informativo. 
             Por consiguiente, al ofrecerlos, no se otorga garantía ni declaración alguna en relación con los contenidos 
             y servicios ofrecidos en el Espacio web, incluyendo, a título enunciativo, garantías de licitud, fiabilidad, 
@@ -182,7 +182,7 @@ export default function AvisoLegalPage() {
           </p>
           
           <h2 className="text-xl font-bold text-primary mt-8 mb-4">Fuerza Mayor</h2>
-          <p className="mb-6">
+          <p className="mb-6 text-primary">
             La empresa no será responsable en todo en caso de imposibilidad de prestar servicio, si ésta se debe a 
             interrupciones prolongadas del suministro eléctrico, líneas de telecomunicaciones, conflictos sociales, 
             huelgas, rebelión, explosiones, inundaciones, actos y omisiones del Gobierno, y en general todos los 
@@ -190,13 +190,13 @@ export default function AvisoLegalPage() {
           </p>
           
           <h2 className="text-xl font-bold text-primary mt-8 mb-4">Resolución de Controversias. Ley Aplicable y Jurisdicción</h2>
-          <p className="mb-6">
+          <p className="mb-6 text-primary">
             Las presentes Condiciones Generales de Uso, así como el uso del Espacio Web, se regirán por la legislación española. 
             Para la resolución de cualquier controversia las partes se someterán a los Juzgados y Tribunales del domicilio 
             social del Responsable del sitio web.
           </p>
           
-          <p className="mb-6">
+          <p className="mb-6 text-primary">
             En el supuesto de que cualquier estipulación de las presentes Condiciones Generales de Uso resultara inexigible 
             o nula en virtud de la legislación aplicable o como consecuencia de una resolución judicial o administrativa, 
             dicha inexigibilidad o nulidad no hará que las presentes Condiciones Generales de Uso resulten inexigibles o 
