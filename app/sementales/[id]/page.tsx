@@ -2,18 +2,20 @@ import { notFound } from "next/navigation"
 import SementalHero from "@/components/semental-hero"
 import SementalTabs from "@/components/semental-tabs"
 
+interface PageParams {
+  id: string;
+} 
+
 // Updated props interface for Next.js App Router dynamic routes
 interface SementalPageProps {
-  params: {
-    id: string
-  }
+  params: Promise<PageParams>;
 }
 
 // Make the component async to properly handle dynamic params
 export default async function SementalPage({ params }: SementalPageProps) {
   // Await the params to satisfy Next.js requirements
-  const { id } = await Promise.resolve(params)
-
+  const { id } = await params
+  
   const sementales = [
     {
       id: "bowcreek",

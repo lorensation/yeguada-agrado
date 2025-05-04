@@ -58,14 +58,15 @@ export default function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-32">
           <Link href="/" className="flex items-center">
-            <Image
-              src="/logo-white.jpg"
-              alt="Yeguada Agrado Logo"
-              width={240}
-              height={240}
-              priority
-              className="mr-3 object-cover"
-            />
+            <div className="relative w-[240px] h-[140px]">
+              <Image
+                src="/logo-white.jpg"
+                alt="Yeguada Agrado Logo"
+                fill
+                sizes="240px"
+                className="object-contain"
+              />
+            </div>
           </Link>
 
           {/* Desktop Menu */}

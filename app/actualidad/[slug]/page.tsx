@@ -6,10 +6,22 @@ import { es } from "date-fns/locale"
 import { notFound } from "next/navigation"
 import { getArticleBySlug } from "@/lib/supabase/client"
 import { Button } from "@/components/ui/button"
+import React from "react"
+
+// Define proper type for params - now it's a promise that resolves to this type
+interface PageParams {
+  slug: string;
+}
+
+// Component props with properly typed params
+interface ArticleProps {
+  params: Promise<PageParams>;
+}
 
 // Generate metadata for the page
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const { article } = await getArticleBySlug(params.slug)
+export async function generateMetadata({ params }: ArticleProps): Promise<Metadata> {
+  const { slug } = await params
+  const { article } = await getArticleBySlug(slug)
   
   if (!article) {
     return {
@@ -29,9 +41,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
 }
 
-export default async function ArticlePage({ params }: { params: { slug: string } }) {
-  const resolvedParams = await params
-  const { article, error } = await getArticleBySlug(resolvedParams.slug)
+export default async function ArticlePage({ params }: ArticleProps) {
+  const { slug } = await params
+  const { article, error } = await getArticleBySlug(slug)
   
   if (error || !article) {
     notFound()
