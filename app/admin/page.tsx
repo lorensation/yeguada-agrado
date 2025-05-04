@@ -72,7 +72,7 @@ export default function AdminDashboard() {
         </Button>
       </div>
       <div className="mb-10 text-center">
-        <Link href="/admin/articles">
+        <Link href={"/admin/articles"}>
             <Button className="text-white hover:underline">
                 Ir a la gestión de artículos
             </Button>

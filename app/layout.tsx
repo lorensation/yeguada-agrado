@@ -24,7 +24,7 @@ export default function RootLayout({
       <body className={`${inter.className} bg-background text-white min-h-screen flex flex-col`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="white"
           enableSystem
           disableTransitionOnChange
         >
