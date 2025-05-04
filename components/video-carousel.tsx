@@ -67,9 +67,6 @@ export default function VideoCarousel({ videos, title, className }: VideoCarouse
                     className="rounded-lg w-full h-full"
                   ></iframe>
                 </div>
-                {video.title && (
-                  <p className="mt-2 text-sm font-medium text-center text-primary">{video.title}</p>
-                )}
               </CarouselItem>
             );
           })}

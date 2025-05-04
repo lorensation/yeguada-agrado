@@ -12,7 +12,7 @@ export default function ServiciosPage() {
     {
       id: "cria",
       title: "Cría",
-      description: "Servicio especializado de cría de caballos de alta calidad con atención personalizada.",
+      description: "Servicio de reproducción y cría del purasangre inglés.",
       image: "/servicios/cria-principal.jpeg",
       detailDescription: `La yeguada cuenta con servicios de cría y reproducción desde el año 2022.\n\n 
         Todas las yeguas están en continuo seguimiento desde que llegan a nuestras instalaciones. Los propietarios eligen un semental de la yeguada como son BOW CREEK y RODABALLO (o de fuera de ella) y nuestro equipo y veterinarios especializados en reproducción se encargan de todo el proceso de cubrición y confirmación de preñez de la yegua.\n\n
@@ -29,7 +29,7 @@ export default function ServiciosPage() {
     {
       id: "doma",
       title: "Doma",
-      description: "Doma profesional adaptada a las necesidades específicas de cada caballo.",
+      description: "Servicio de doma y preparación de yearlings para subasta.",
       image: "/servicios/doma-principal.jpg",
       detailDescription: `El primer gran paso para criar campeones pasa por una buena doma. Nuestro personal de la yeguada es experto en la doma del purasangre inglés basándonos en la calidad y paciencia.\n\n
         En 2 semanas desde su llegada, el potro ya ha pasado todas las etapas de cinchuelo y ya estaría preparado para ser montado en el picadero para posteriormente pasar a la pista y continuar con el proceso de boca.\n\n
@@ -43,7 +43,7 @@ export default function ServiciosPage() {
     {
       id: "pretraining",
       title: "Pretraining",
-      description: "Preparación inicial para caballos jóvenes antes de comenzar su entrenamiento específico.",
+      description: "Servicio de pretraining para potros de 2 años.",
       image: "/servicios/pretraining-principal2.jpg",
       detailDescription: `El proceso de pre-training se desarrolla en la nueva pista de pre-training. Con 700 metros de cuerda y 4 metros de anchura, la pista de pre-training es el trazado ideal para que los potros empiecen a conocer su oficio.\n\n 
         Un drenaje especial acompañado de arena mezclada con fibra presta las condiciones idóneas para un correcto ejercicio. Los potros se dividen en lotes y completan un proceso de 2 a 3 meses en la pista con profesionales de primer nivel donde aprenden a trotar, galopar y trabajar cabeza-cabeza con otros potros.\n\n
@@ -59,7 +59,7 @@ export default function ServiciosPage() {
     {
       id: "descanso",
       title: "Descanso",
-      description: "Instalaciones de primera calidad para el descanso y recuperación de los caballos.",
+      description: "Servicio de descanso y recuperación de caballos en competición.",
       image: "/servicios/descanso-principal2.jpg",
       detailDescription: `Tras una temporada exigente, muchos propietarios y entrenadores deciden dar a sus pupilos un merecido descanso alejado del estrés de la competición. 
         Nuestras instalaciones cuentan con todo lo necesario para que los caballos recuperen fuerzas y vuelvan en las mejores condiciones posibles al entrenamiento. 

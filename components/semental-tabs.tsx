@@ -244,19 +244,19 @@ export default function SementalTabs({ semental }: SementalTabsProps) {
                 )}
                 
                 <div className="grid grid-cols-2 gap-2">
-                  {semental.born && (
+                  {semental.born && semental.height && (
                     <div>
+                      <span className="text-primary font-bold mx-2">Año de nacimiento:</span>
                       <span className="text-primary">{semental.born}</span>
-                    </div>
-                  )}
-                  {semental.height && (
-                    <div>
+                      <span className="text-primary font-bold mx-2">|</span>
+                      <span className="text-primary font-bold mx-2">Alzada:</span>
                       <span className="text-primary">{semental.height}</span>
                     </div>
                   )}
                   {semental.fee && (
                     <div className="col-span-2 mt-2">
-                      <span className="text-primary font-bold">{semental.fee}</span>
+                      <span className="text-primary font-bold mx-2">Fee 2025:</span>
+                      <span className="text-primary">{semental.fee}</span>
                     </div>
                   )}
                 </div>
@@ -388,9 +388,9 @@ export default function SementalTabs({ semental }: SementalTabsProps) {
             <div className="absolute top-0 left-0 bottom-0 w-1/4 bg-white"></div>
             
             {/* Image container positioned to take up 3/4 of the width and start from the second quarter */}
-            <div className="relative ml-[25%] w-full h-[800px]">
+            <div className="relative ml-[25%] w-[75%] h-[800px]">
               <Image 
-                src={defaultImages.palmares || `/placeholder.svg?height=800&width=1200&query=${semental.name} achievement`} 
+                src={defaultImages.palmares || `/placeholder.svg?height=800&width=1200&query=${semental.name}achievement`} 
                 alt={`Palmarés de ${semental.name}`} 
                 fill 
                 className="object-cover" 
