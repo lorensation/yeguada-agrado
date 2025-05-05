@@ -23,7 +23,7 @@ export default async function SementalPage({ params }: SementalPageProps) {
       tagline: "SHAMARDAL X BENEVENTA (MOST WELCOME)",
       fee: "2.500€ PV",
       year: "2023",
-      image: "/sementales/bowcreek/bowcreek5.jpg",
+      image: "/sementales/bowcreek/hero.jpg",
       description: "Precocidad y velocidad asegurada",
       breed: "Pura Sangre Inglés",
       color: "Castaño",

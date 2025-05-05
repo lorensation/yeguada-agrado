@@ -13,6 +13,8 @@ import {
 import { Separator } from "@/components/ui/separator"
 import { Button } from "./ui/button"
 import VideoCarousel from "./video-carousel"
+import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog"
+import { X, ChevronLeft, ChevronRight } from "lucide-react"
 
 interface VideoItem {
   url: string
@@ -61,6 +63,9 @@ interface SementalTabsProps {
 export default function SementalTabs({ semental }: SementalTabsProps) {
   const [activeTab, setActiveTab] = useState("perfil")
   const [stickyNav, setStickyNav] = useState(false)
+  // New state for the image modal
+  const [showImageModal, setShowImageModal] = useState(false)
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0)
   
   // References to each section
   const sectionRefs = {
@@ -145,6 +150,10 @@ export default function SementalTabs({ semental }: SementalTabsProps) {
       `/sementales/${semental.id.toLowerCase()}/${semental.id.toLowerCase()}5.jpg`,
       `/sementales/${semental.id.toLowerCase()}/${semental.id.toLowerCase()}6.jpg`,
       `/sementales/${semental.id.toLowerCase()}/${semental.id.toLowerCase()}7.jpg`,
+      `/sementales/${semental.id.toLowerCase()}/${semental.id.toLowerCase()}8.jpg`,
+      `/sementales/${semental.id.toLowerCase()}/${semental.id.toLowerCase()}9.jpg`,
+      `/sementales/${semental.id.toLowerCase()}/${semental.id.toLowerCase()}10.jpg`,
+      `/sementales/${semental.id.toLowerCase()}/${semental.id.toLowerCase()}11.jpg`,
     ]
   }
 
@@ -153,6 +162,41 @@ export default function SementalTabs({ semental }: SementalTabsProps) {
   // Use provided images or fallback to placeholders
   const galleryImages = semental.images || 
     defaultImages.galeria.map((img, i) => img || `/placeholder.svg?height=600&width=800&query=${semental.name} ${i+1}`)
+
+  // Function to navigate to the previous image in the modal
+  const prevImage = () => {
+    setSelectedImageIndex((prev) => 
+      prev === 0 ? galleryImages.length - 1 : prev - 1
+    )
+  }
+
+  // Function to navigate to the next image in the modal
+  const nextImage = () => {
+    setSelectedImageIndex((prev) => 
+      prev === galleryImages.length - 1 ? 0 : prev + 1
+    )
+  }
+
+  // Add keyboard event handlers for the fullscreen image modal
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!showImageModal) return
+
+      if (e.key === 'ArrowLeft') {
+        prevImage()
+      } else if (e.key === 'ArrowRight') {
+        nextImage()
+      } else if (e.key === 'Escape') {
+        setShowImageModal(false)
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [showImageModal])
 
   return (
     <>
@@ -388,7 +432,7 @@ export default function SementalTabs({ semental }: SementalTabsProps) {
             <div className="hidden lg:block lg:absolute lg:top-0 lg:left-0 lg:bottom-0 lg:w-1/4 lg:bg-white"></div>
             
             {/* Image container - displayed below content on mobile, positioned on desktop */}
-            <div className="w-full h-[400px] lg:relative lg:ml-[25%] lg:w-[75%] rounded-lg overflow-hidden">
+            <div className="w-full h-[800px] lg:relative lg:ml-[25%] lg:w-[75%] rounded-lg overflow-hidden">
               {/* Non-absolute positioning in mobile, absolute positioning only on larger screens */}
               <div className="relative w-full h-full lg:static">
                 <Image 
@@ -433,7 +477,7 @@ export default function SementalTabs({ semental }: SementalTabsProps) {
                     </div>
                     
                     {/* Details on the right, occupying more horizontal space */}
-                    <div className="flex-grow md:w-2/3">
+                    <div className="flex-grow pl-10 md:w-2/3">
                       <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-6">
                         <h4 className="text-3xl font-semibold text-primary">
                           {produccion.nombre}, {produccion.año}
@@ -504,12 +548,18 @@ export default function SementalTabs({ semental }: SementalTabsProps) {
             <CarouselContent>
               {galleryImages.map((image, index) => (
                 <CarouselItem key={index} className="basis-full md:basis-1/2 lg:basis-1/3">
-                  <div className="relative h-80 rounded-lg overflow-hidden">
+                  <div 
+                    className="relative h-80 rounded-lg overflow-hidden cursor-pointer"
+                    onClick={() => {
+                      setSelectedImageIndex(index)
+                      setShowImageModal(true)
+                    }}
+                  >
                     <Image
                       src={image}
                       alt={`Imagen de ${semental.name} ${index + 1}`}
                       fill
-                      className="object-cover"
+                      className="object-cover hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                 </CarouselItem>
@@ -522,6 +572,62 @@ export default function SementalTabs({ semental }: SementalTabsProps) {
           </Carousel>
         </div>
       </div>
+
+      {/* Fullscreen Image Modal */}
+      <Dialog open={showImageModal} onOpenChange={setShowImageModal}>
+        <DialogContent className="max-w-screen-lg p-0 w-[calc(100vw-32px)] h-[calc(100vh-32px)] border-none bg-transparent shadow-none">
+          <div className="relative w-full h-full flex items-center justify-center">
+            {/* Image container */}
+            <div className="relative w-full h-full flex items-center justify-center">
+              {galleryImages.length > 0 && (
+                <div className="relative w-full h-full flex items-center justify-center">
+                  <div className="relative w-auto h-auto max-w-full max-h-full">
+                    <Image
+                      src={galleryImages[selectedImageIndex]}
+                      alt={`Imagen de ${semental.name}`}
+                      width={1200}
+                      height={800}
+                      className="object-contain rounded-md"
+                      style={{ maxHeight: 'calc(100vh - 100px)' }}
+                    />
+                  </div>
+                </div>
+              )}
+            </div>
+            
+            {/* Close button */}
+            <button 
+              onClick={() => setShowImageModal(false)}
+              className="absolute top-4 right-4 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-all z-50"
+              aria-label="Cerrar"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            
+            {/* Navigation controls */}
+            <button
+              onClick={prevImage}
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-3 rounded-full hover:bg-black/70 transition-all z-50"
+              aria-label="Anterior"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+            
+            <button
+              onClick={nextImage}
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-3 rounded-full hover:bg-black/70 transition-all z-50"
+              aria-label="Siguiente"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+            
+            {/* Image counter */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/50 text-white px-3 py-1 rounded-full text-sm">
+              {selectedImageIndex + 1} / {galleryImages.length}
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </>
   )
 }
