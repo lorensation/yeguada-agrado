@@ -2,7 +2,7 @@
 
 import type React from "react"
 import { useState } from "react"
-import { Check, Loader2 } from "lucide-react"
+import { AlertCircle, Check, Loader2 } from "lucide-react"
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -14,23 +14,36 @@ export default function ContactForm() {
   })
   
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle")
+  const [errorMessage, setErrorMessage] = useState<string>("")
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setStatus("submitting")
+    setErrorMessage("")
     
-    // Simulating form submission with a timeout
-    setTimeout(() => {
-      // Aquí iría la lógica para enviar el formulario
-      console.log(formData)
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+      
+      const data = await response.json()
+      
+      if (!response.ok) {
+        throw new Error(data.error || 'Error al enviar el mensaje')
+      }
+      
       setStatus("success")
       
-      // Reset form after 3 seconds
+      // Reset form after 5 seconds
       setTimeout(() => {
         setFormData({
           name: "",
@@ -40,8 +53,12 @@ export default function ContactForm() {
           message: "",
         })
         setStatus("idle")
-      }, 3000)
-    }, 1500)
+      }, 5000)
+    } catch (error) {
+      console.error('Error sending message:', error)
+      setErrorMessage(error instanceof Error ? error.message : 'Error al enviar el mensaje')
+      setStatus("error")
+    }
   }
 
   return (
@@ -50,7 +67,7 @@ export default function ContactForm() {
         Envíanos un Mensaje
       </h2>
 
-      {status === "success" ? (
+      {status === "success" && (
         <div className="bg-green-50 border-l-4 border-green-500 p-4 mb-6 rounded">
           <div className="flex items-center">
             <div className="flex-shrink-0">
@@ -58,12 +75,27 @@ export default function ContactForm() {
             </div>
             <div className="ml-3">
               <p className="text-sm text-green-800 font-medium">
-                ¡Mensaje enviado correctamente! Nos pondremos en contacto contigo lo antes posible.
+                ¡Mensaje enviado correctamente! Hemos enviado una confirmación a tu email y nos pondremos en contacto contigo lo antes posible.
               </p>
             </div>
           </div>
         </div>
-      ) : null}
+      )}
+
+      {status === "error" && (
+        <div className="bg-red-50 border-l-4 border-red-500 p-4 mb-6 rounded">
+          <div className="flex items-center">
+            <div className="flex-shrink-0">
+              <AlertCircle className="h-5 w-5 text-red-500" />
+            </div>
+            <div className="ml-3">
+              <p className="text-sm text-red-800 font-medium">
+                {errorMessage || 'Ha ocurrido un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.'}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
 
       <form onSubmit={handleSubmit} className="space-y-5">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">

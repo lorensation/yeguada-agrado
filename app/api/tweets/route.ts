@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { kv } from '@vercel/kv'; // If you're on Vercel and have KV storage
+import { createClient } from 'redis';
 import fs from 'fs';
 import path from 'path';
 
@@ -7,10 +7,10 @@ const TWITTER_USER_ID = '1593635811945242624'; // YeguadaAgrado Twitter/X user I
 const TWITTER_USERNAME = 'YeguadaAgrado'; // Twitter/X username
 const CACHE_TIME = 3600; // Cache for 1 hour (in seconds)
 
-// Use a local cache file for non-Vercel environments
+// Use a local cache file for fallback when Redis is unavailable
 const CACHE_FILE_PATH = path.join(process.cwd(), 'tweets-cache.json');
 
-// Helper function to save cache to file
+// Helper function to save cache to file (fallback method)
 const saveCacheToFile = async (data: any) => {
   try {
     fs.writeFileSync(
@@ -25,7 +25,7 @@ const saveCacheToFile = async (data: any) => {
   }
 };
 
-// Helper function to read cache from file
+// Helper function to read cache from file (fallback method)
 const readCacheFromFile = () => {
   try {
     if (fs.existsSync(CACHE_FILE_PATH)) {
@@ -37,6 +37,21 @@ const readCacheFromFile = () => {
   }
   return null;
 };
+
+// Create a Redis client
+async function getRedisClient() {
+  try {
+    const client = createClient({
+      url: process.env.REDIS_URL
+    });
+    
+    await client.connect();
+    return { client, connected: true };
+  } catch (error) {
+    console.error('Error connecting to Redis:', error);
+    return { client: null, connected: false };
+  }
+}
 
 export async function GET() {
   try {
@@ -52,13 +67,22 @@ export async function GET() {
 
     // Try to get cached data first
     let cachedData;
+    let redisClient = null;
+    let redisConnected = false;
     
     try {
-      // Try Vercel KV first (if available)
-      if (typeof kv !== 'undefined') {
-        cachedData = await kv.get('twitter_timeline_cache');
+      // Try Redis first
+      const { client, connected } = await getRedisClient();
+      redisClient = client;
+      redisConnected = connected;
+      
+      if (connected && client) {
+        const cachedJson = await client.get('twitter_timeline_cache');
+        if (cachedJson) {
+          cachedData = JSON.parse(cachedJson);
+        }
       } else {
-        // Fall back to file-based cache
+        // Fall back to file-based cache if Redis is unavailable
         cachedData = readCacheFromFile();
       }
       
@@ -67,6 +91,12 @@ export async function GET() {
           cachedData.timestamp && 
           (Date.now() - cachedData.timestamp) / 1000 < CACHE_TIME) {
         console.log('Serving tweets from cache');
+        
+        // Close Redis connection if it's open
+        if (redisConnected && redisClient) {
+          await redisClient.disconnect();
+        }
+        
         return NextResponse.json(cachedData.data);
       }
     } catch (error) {
@@ -91,6 +121,12 @@ export async function GET() {
           // If we hit rate limit but have cached data, return the cached data even if expired
           if (userResponse.status === 429 && cachedData && cachedData.data) {
             console.log('Rate limited, serving expired cache');
+            
+            // Close Redis connection if it's open
+            if (redisConnected && redisClient) {
+              await redisClient.disconnect();
+            }
+            
             return NextResponse.json(cachedData.data);
           }
           throw new Error(`Failed to find X user: ${userResponse.statusText}`);
@@ -104,6 +140,12 @@ export async function GET() {
         // If we have any cached data (even expired), return it instead of an error
         if (cachedData && cachedData.data) {
           console.log('Error fetching user, serving from cache');
+          
+          // Close Redis connection if it's open
+          if (redisConnected && redisClient) {
+            await redisClient.disconnect();
+          }
+          
           return NextResponse.json(cachedData.data);
         }
         
@@ -131,6 +173,12 @@ export async function GET() {
       // If we have any cached data (even expired), return it
       if (cachedData && cachedData.data) {
         console.log('Rate limited, serving from cache');
+        
+        // Close Redis connection if it's open
+        if (redisConnected && redisClient) {
+          await redisClient.disconnect();
+        }
+        
         return NextResponse.json(cachedData.data);
       }
       
@@ -147,6 +195,12 @@ export async function GET() {
       // For other errors, also try to use cache if available
       if (cachedData && cachedData.data) {
         console.log(`Error ${response.status}, serving from cache`);
+        
+        // Close Redis connection if it's open
+        if (redisConnected && redisClient) {
+          await redisClient.disconnect();
+        }
+        
         return NextResponse.json(cachedData.data);
       }
       
@@ -162,16 +216,30 @@ export async function GET() {
         timestamp: Date.now(),
       };
       
-      // Try Vercel KV first
-      if (typeof kv !== 'undefined') {
-        await kv.set('twitter_timeline_cache', cacheObject, { ex: CACHE_TIME });
+      // Try Redis first
+      if (redisConnected && redisClient) {
+        await redisClient.set('twitter_timeline_cache', JSON.stringify(cacheObject), {
+          EX: CACHE_TIME
+        });
+        
+        // Close Redis connection
+        await redisClient.disconnect();
       } else {
-        // Fall back to file-based cache
+        // Fall back to file-based cache if Redis is unavailable
         await saveCacheToFile(data);
       }
     } catch (cacheError) {
       console.warn('Failed to cache tweets data:', cacheError);
       // Non-critical error, we can continue
+      
+      // Attempt to close Redis connection if there was an error
+      if (redisConnected && redisClient) {
+        try {
+          await redisClient.disconnect();
+        } catch (disconnectError) {
+          console.error('Error disconnecting from Redis:', disconnectError);
+        }
+      }
     }
     
     return NextResponse.json(data);
