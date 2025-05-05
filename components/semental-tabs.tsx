@@ -264,9 +264,9 @@ export default function SementalTabs({ semental }: SementalTabsProps) {
               
               {/* Buttons */}
               <div className="flex flex-col sm:flex-row gap-3 mb-4">
-                <Link href={"/contacto"}>
+                <Link href={"/contacto"} className="w-full sm:flex-1">
                   <Button
-                    className="bg-primary hover:bg-primary/80 text-white py-3 px-20 rounded-md transition-all flex items-center justify-center gap-2 flex-1"
+                    className="w-full bg-primary hover:bg-primary/80 text-white py-3 px-4 rounded-md transition-all flex items-center justify-center gap-2"
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path>
@@ -276,7 +276,7 @@ export default function SementalTabs({ semental }: SementalTabsProps) {
                 </Link>
                 <Button
                   onClick={() => window.open(`/sementales/${semental.id.toLowerCase()}/pedigree.pdf`, "_blank")}
-                  className="bg-gold hover:bg-gold/80 text-white py-3 px-4 rounded-md transition-all flex items-center justify-center gap-2 flex-1"
+                  className="w-full sm:flex-1 bg-gold hover:bg-gold/80 text-white py-3 px-4 rounded-md transition-all flex items-center justify-center gap-2"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -348,9 +348,9 @@ export default function SementalTabs({ semental }: SementalTabsProps) {
         <div ref={sectionRefs.palmares} id="palmares" className="px-4 py-8">
           <h3 className="text-4xl font-bold text-primary mb-6">Palmarés</h3>
           
-          <div className="relative rounded-lg mb-20">
-            {/* Content positioned on the left side (first quarter) */}
-            <div className="absolute top-0 left-0 bottom-0 w-3/4 z-10 p-18">
+          <div className="flex flex-col lg:relative lg:rounded-lg mb-8 lg:mb-20">
+            {/* Content first on mobile, positioned on desktop */}
+            <div className="w-full mb-6 lg:absolute lg:top-0 lg:left-0 lg:bottom-0 lg:w-3/4 lg:z-10 lg:p-18 lg:mb-0">
               <div>
                 {semental.palmares && semental.palmares.length > 0 ? (
                   <div className="space-y-2">
@@ -384,24 +384,29 @@ export default function SementalTabs({ semental }: SementalTabsProps) {
               </div>
             </div>
             
-            {/* Background color for the text area (first quarter) */}
-            <div className="absolute top-0 left-0 bottom-0 w-1/4 bg-white"></div>
+            {/* Background color for the text area on desktop only */}
+            <div className="hidden lg:block lg:absolute lg:top-0 lg:left-0 lg:bottom-0 lg:w-1/4 lg:bg-white"></div>
             
-            {/* Image container positioned to take up 3/4 of the width and start from the second quarter */}
-            <div className="relative ml-[25%] w-[75%] h-[800px]">
-              <Image 
-                src={defaultImages.palmares || `/placeholder.svg?height=800&width=1200&query=${semental.name}achievement`} 
-                alt={`Palmarés de ${semental.name}`} 
-                fill 
-                className="object-cover" 
-              />
-              {/* Gradient overlay from left edge of image to maintain readability at the boundary */}
-              <div 
-                className="absolute inset-0" 
-                style={{ 
-                  background: 'linear-gradient(to right, rgba(255,255,255,1) 5%, rgba(255,255,255,0.3) 55%, rgba(255,255,255,0) 60%)' 
-                }}
-              ></div>
+            {/* Image container - displayed below content on mobile, positioned on desktop */}
+            <div className="w-full h-[400px] lg:relative lg:ml-[25%] lg:w-[75%] rounded-lg overflow-hidden">
+              {/* Non-absolute positioning in mobile, absolute positioning only on larger screens */}
+              <div className="relative w-full h-full lg:static">
+                <Image 
+                  src={defaultImages.palmares || `/placeholder.svg?height=800&width=1200&query=${semental.name}achievement`} 
+                  alt={`Palmarés de ${semental.name}`}
+                  className="object-cover"
+                  width={1200}
+                  height={800}
+                  style={{ width: '100%', height: '100%' }}
+                />
+                {/* Gradient overlay only on desktop */}
+                <div 
+                  className="hidden lg:block lg:absolute lg:inset-0" 
+                  style={{ 
+                    background: 'linear-gradient(to right, rgba(255,255,255,1) 5%, rgba(255,255,255,0.3) 55%, rgba(255,255,255,0) 60%)' 
+                  }}
+                ></div>
+              </div>
             </div>
           </div>
           

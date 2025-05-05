@@ -199,13 +199,13 @@ export default function ArticleList() {
       <AlertDialog open={deleteDialogOpen} onOpenChange={setDeleteDialogOpen}>
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>¿Estás seguro?</AlertDialogTitle>
+            <AlertDialogTitle className="!text-primary font-bold">¿Estás seguro?</AlertDialogTitle>
             <AlertDialogDescription>
               Esta acción eliminará permanentemente el artículo &quot;{selectedArticle?.title}&quot; y no se puede deshacer.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel>Cancelar</AlertDialogCancel>
+            <AlertDialogCancel className="!text-primary !border-primary hover:bg-primary/10">Cancelar</AlertDialogCancel>
             <AlertDialogAction 
               onClick={handleDelete} 
               className="bg-red-600 hover:bg-red-700 text-white"
@@ -216,6 +216,7 @@ export default function ArticleList() {
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
+      
     </div>
   );
 }
