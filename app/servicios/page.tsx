@@ -14,10 +14,10 @@ export default function ServiciosPage() {
       title: "Cría",
       description: "Servicio de reproducción y cría del purasangre inglés.",
       image: "/servicios/cria-principal.jpeg",
-      detailDescription: `La yeguada cuenta con servicios de cría y reproducción desde el año 2022.\n\n 
-        Todas las yeguas están en continuo seguimiento desde que llegan a nuestras instalaciones. Los propietarios eligen un semental de la yeguada como son BOW CREEK y RODABALLO (o de fuera de ella) y nuestro equipo y veterinarios especializados en reproducción se encargan de todo el proceso de cubrición y confirmación de preñez de la yegua.\n\n
-        Diez meses después, un mes antes de la fecha estimada de parto, las yeguas pasan a las parideras videovigiladas con el sensor EasyFoal instalado en cada una de ellas, dispositivo especializado en la detección y previo aviso de partos en yeguas. Una vez nace el potro, nuestro equipo veterinario realiza un chequeo básico y firma el acta de nacimiento.\n\n
-        Una vez los foals se han desarrollado lo suficiente con sus madres en libertad, son destetados a los 6 meses y pasan a yerling el 1 de enero, donde se incrementan con suplementos vitamínicos para un correcto crecimiento y desarrollo en libertad en los prados de la yeguada, con un seguimiento básico de vacunas y herrajes. Llegado el verano, comienza su trabajo de cara a la posible presentación en subasta o doma, a elección del cliente.
+      detailDescription: `La yeguada cuenta con <strong>servicios de cría y reproducción</strong> desde el año 2022.\n\n 
+        Todas las yeguas están en <strong>continuo seguimiento</strong> desde que llegan a nuestras instalaciones. Los propietarios eligen un semental de la yeguada como son BOW CREEK y RODABALLO (o de fuera de ella) y nuestro <strong>equipo y veterinarios especializados en reproducción</strong> se encargan de todo el proceso de cubrición y confirmación de preñez de la yegua.\n\n
+        Diez meses después, un mes antes de la fecha estimada de parto, las yeguas pasan a las <strong>parideras videovigiladas</strong> con el sensor <strong>EasyFoal</strong> instalado en cada una de ellas, dispositivo especializado en la detección y previo aviso de partos en yeguas. Una vez nace el potro, nuestro equipo veterinario realiza un chequeo básico y firma el acta de nacimiento.\n\n
+        Una vez los foals se han desarrollado lo suficiente con sus madres en libertad, son <strong>destetados a los 6 meses</strong> y pasan a yerling el 1 de enero, donde se incrementan con <strong>suplementos vitamínicos</strong> para un correcto crecimiento y desarrollo en libertad en los prados de la yeguada, con un seguimiento básico de vacunas y herrajes. Llegado el verano, comienza su trabajo de cara a la posible presentación en <strong>subasta o doma</strong>, a elección del cliente.
         `,
       images: [
         "/servicios/cria/cria3.jpeg",
@@ -31,9 +31,9 @@ export default function ServiciosPage() {
       title: "Doma",
       description: "Servicio de doma y preparación de yearlings para subasta.",
       image: "/servicios/doma-principal.jpg",
-      detailDescription: `El primer gran paso para criar campeones pasa por una buena doma. Nuestro personal de la yeguada es experto en la doma del purasangre inglés basándonos en la calidad y paciencia.\n\n
-        En 2 semanas desde su llegada, el potro ya ha pasado todas las etapas de cinchuelo y ya estaría preparado para ser montado en el picadero para posteriormente pasar a la pista y continuar con el proceso de boca.\n\n
-        En apenas 3 semanas, el potro ya estaría listo para continuar su aprendizaje en la pista de pre-training.`,
+      detailDescription: `El primer gran paso para criar campeones pasa por una <strong>buena doma</strong>. Nuestro personal de la yeguada es <strong>experto en la doma del purasangre inglés</strong> basándonos en la <strong>calidad y paciencia</strong>.\n\n
+        En <strong>2 semanas</strong> desde su llegada, el potro ya ha pasado todas las etapas de cinchuelo y ya estaría preparado para ser montado en el picadero para posteriormente pasar a la pista y continuar con el proceso de boca.\n\n
+        En apenas <strong>3 semanas</strong>, el potro ya estaría listo para continuar su aprendizaje en la <strong>pista de pre-training</strong>.`,
       images: [
         "/servicios/doma/doma2.jpg",
         "/servicios/doma/doma1.jpg",
@@ -45,10 +45,10 @@ export default function ServiciosPage() {
       title: "Pretraining",
       description: "Servicio de pretraining para potros de 2 años.",
       image: "/servicios/pretraining-principal2.jpg",
-      detailDescription: `El proceso de pre-training se desarrolla en la nueva pista de pre-training. Con 700 metros de cuerda y 4 metros de anchura, la pista de pre-training es el trazado ideal para que los potros empiecen a conocer su oficio.\n\n 
-        Un drenaje especial acompañado de arena mezclada con fibra presta las condiciones idóneas para un correcto ejercicio. Los potros se dividen en lotes y completan un proceso de 2 a 3 meses en la pista con profesionales de primer nivel donde aprenden a trotar, galopar y trabajar cabeza-cabeza con otros potros.\n\n
+      detailDescription: `El proceso de pre-training se desarrolla en la <strong>nueva pista de pre-training</strong>. Con <strong>700 metros de cuerda</strong> y <strong>4 metros de anchura</strong>, la pista de pre-training es el trazado ideal para que los potros empiecen a conocer su oficio.\n\n 
+        Un <strong>drenaje especial</strong> acompañado de <strong>arena mezclada con fibra</strong> presta las condiciones idóneas para un correcto ejercicio. Los potros se dividen en lotes y completan un proceso de <strong>2 a 3 meses</strong> en la pista con <strong>profesionales de primer nivel</strong> donde aprenden a trotar, galopar y trabajar cabeza-cabeza con otros potros.\n\n
         Una vez completado el pre-training, están listos para viajar con sus entrenadores a los centros de entrenamiento.
-        Esta temporada 2025, hemos completado exitosamente la doma y pre-training de 16 potros que ya se encuentran a las órdenes de sus respectivos entrenadores.`,
+        Esta temporada 2025, hemos completado exitosamente la doma y pre-training de <strong>16 potros</strong> que ya se encuentran a las órdenes de sus respectivos entrenadores.`,
       images: [
         "/servicios/pretraining/pretraining4.jpg",
         "/servicios/pretraining-principal.jpg",
@@ -61,9 +61,9 @@ export default function ServiciosPage() {
       title: "Descanso",
       description: "Servicio de descanso y recuperación de caballos en competición.",
       image: "/servicios/descanso-principal2.jpg",
-      detailDescription: `Tras una temporada exigente, muchos propietarios y entrenadores deciden dar a sus pupilos un merecido descanso alejado del estrés de la competición. 
-        Nuestras instalaciones cuentan con todo lo necesario para que los caballos recuperen fuerzas y vuelvan en las mejores condiciones posibles al entrenamiento. 
-        Para ello, disponen de boxes de 6,5m x 4m equipados con suelos de goma, bebederos automáticos, ventanas a ambos lados y sistema de videovigilancia 24h individual para cada box, además de prados individuales y caminador a elección del cliente.`,
+      detailDescription: `Tras una temporada exigente, muchos propietarios y entrenadores deciden dar a sus pupilos un <strong>merecido descanso</strong> alejado del estrés de la competición. 
+        Nuestras instalaciones cuentan con <strong>todo lo necesario</strong> para que los caballos recuperen fuerzas y vuelvan en las <strong>mejores condiciones posibles</strong> al entrenamiento. 
+        Para ello, disponen de <strong>boxes de 6,5m x 4m</strong> equipados con <strong>suelos de goma, bebederos automáticos, ventanas a ambos lados</strong> y <strong>sistema de videovigilancia 24h</strong> individual para cada box, además de <strong>prados individuales</strong> y <strong>caminador</strong> a elección del cliente.`,
       images: [
         "/servicios/descanso/descanso1.jpeg",
         "/servicios/descanso/descanso3.jpg",
@@ -100,7 +100,7 @@ export default function ServiciosPage() {
             <div>
             <div className="text-primary text-lg mb-6 whitespace-pre-line pr-8">
                 {servicio.detailDescription && servicio.detailDescription.split('\n').map((paragraph, idx) => (
-                  <p key={idx} className="mb-4">{paragraph}</p>
+                  <p key={idx} className="mb-4" dangerouslySetInnerHTML={{ __html: paragraph }}></p>
                 ))}
               </div>
               <Link href="/contacto">

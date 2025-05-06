@@ -231,9 +231,24 @@ export default function SementalTabs({ semental }: SementalTabsProps) {
               <h1 className="text-5xl md:text-6xl font-bold text-contrast uppercase tracking-wide mb-6">{semental.name}</h1>
               
               <div className="text-primary text-lg mb-6 whitespace-pre-line pr-8">
-                {semental.profile && semental.profile.split('\n').map((paragraph, idx) => (
-                  <p key={idx} className="mb-4">{paragraph}</p>
-                ))}
+                {semental.profile && semental.profile.split('\n').map((paragraph, idx) => {
+                  // Process the paragraph to handle bold formatting
+                  const parts = paragraph.split(/(\*\*.*?\*\*)/g);
+                  
+                  return (
+                    <p key={idx} className="mb-4">
+                      {parts.map((part, partIdx) => {
+                        // Check if this part is bold (enclosed in **)
+                        if (part.startsWith('**') && part.endsWith('**')) {
+                          // Extract the text between ** and render it as bold
+                          const boldText = part.substring(2, part.length - 2);
+                          return <strong key={partIdx} className="font-bold">{boldText}</strong>;
+                        }
+                        return <span key={partIdx}>{part}</span>;
+                      })}
+                    </p>
+                  );
+                })}
               </div>
 
               {semental.achievements && semental.achievements.length > 0 && (
