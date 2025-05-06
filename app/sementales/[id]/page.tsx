@@ -32,7 +32,7 @@ export default async function SementalPage({ params }: SementalPageProps) {
       origin: "SHAMARDAL X BENEVENTA (MOST WELCOME)",
       achievements: [],
       profile:
-        `BOW CREEK es hijo de **SHAMARDAL**, uno de los **mejores caballos y sementales del siglo XXI** y padre de sementales primer nivel mundial como LOPE DE VEGA, BLUE POINT, PINATUBO, EARTHLIGHT, VICTOR LUDORUM, …\n\nSu historial deportivo está al alcance de **muy pocos sementales en España**. **Millero internacional triple ganador de Grupo**, destacó a 3 años ganando su primer Grupo 2 en Gran Bretaña llamando la atención del gigante **Godolphin**, quien apostó por el brindándoles dos Grupos 2 más en Irlanda y Australia.\n\nEn su primera producción como semental en Francia destacó con caballos como **BREIZH EAGLE** (3º Poule d'Essai des Poulains G1 2021 y múltiple ganador de Listed Race) y el incansable **WHAT'S UP** en España (1º Gran Premio Cimera – Poule de Potros 2021 y triple colocado de Gran Premio a 3 años).\n\n**Precocidad y velocidad asegurada**.`,
+        `**BOW CREEK** es hijo de **SHAMARDAL**, uno de los mejores caballos y sementales del siglo XXI y padre de sementales primer nivel mundial como **LOPE DE VEGA**, **BLUE POINT**, **PINATUBO**, **EARTHLIGHT**, **VICTOR LUDORUM**, …\n\nSu historial deportivo está al alcance de muy pocos sementales en España. Millero internacional triple ganador de Grupo, destacó a 3 años ganando su primer **Grupo 2** en Gran Bretaña llamando la atención del gigante Godolphin, quien apostó por el brindándoles dos **Grupos 2** más en Irlanda y Australia.\n\nEn su primera producción como semental en Francia destacó con caballos como **BREIZH EAGLE** (3º Poule d'Essai des Poulains **G1** 2021 y múltiple ganador de Listed Race) y el incansable **WHAT'S UP** en España (**1º Gran Premio Cimera** – Poule de Potros 2021 y triple colocado de **Gran Premio** a 3 años).\n\nPrecocidad y velocidad asegurada.`,
       palmares: [
         {
           edad: "A 2 años",
@@ -159,7 +159,7 @@ export default async function SementalPage({ params }: SementalPageProps) {
       tagline: "LOPE DE VEGA X SHORT AFFAIR (SINGSPIEL)",
       fee: "2.000€ PV",
       year: "2023",
-      image: "/sementales/rodaballo/perfil.jpg",
+      image: "/sementales/rodaballo/hero.jpg",
       description: "Uno de los mejores caballos del siglo XXI en España",
       breed: "Pura Sangre Inglés",
       color: "Castaño",
@@ -168,7 +168,7 @@ export default async function SementalPage({ params }: SementalPageProps) {
       origin: "LOPE DE VEGA X SHORT AFFAIR (SINGSPIEL)",
       achievements: [],
       profile:
-        `RODABALLO es sin duda uno de los **mejores caballos del siglo XXI en España**. Hijo de **LOPE DE VEGA**, padre de sementales primer nivel en Europa como BELARDO o PHOENIX OF SPAIN, además de los prometedores LUCKY VEGA, LOPE Y FERNANDEZ y LOOK DE VEGA, tiene todas las condiciones para transmitir su **gran velocidad y excelente cambio de ritmo**.\n\n**Ganador clásico** a 3 años al imponerse en el Gran Premio Cimera – Poule de Potros 2020, **conquistó Alemania ganando Grupo 2** para posteriormente ganar tres Grandes Premios más y ser nombrado **Mejor caballo del año 2021**. Terminó su carrera deportiva **representando a España** en los hipódromos más prestigiosos del mundo como Meydan (Dubai), Royal Ascot (Gran Bretaña) o Longchamp (Francia).`,
+        `**RODABALLO** es sin duda uno de los mejores caballos del siglo XXI en España. Hijo de **LOPE DE VEGA**, padre de sementales primer nivel en Europa como **BELARDO** o **PHOENIX OF SPAIN**, además de los prometedores **LUCKY VEGA**, **LOPE Y FERNANDEZ** y **LOOK DE VEGA**, tiene todas las condiciones para transmitir su gran velocidad y excelente cambio de ritmo.\n\nGanador clásico a 3 años al imponerse en el **Gran Premio Cimera** – Poule de Potros 2020, conquistó Alemania ganando **Grupo 2** para posteriormente ganar tres Grandes Premios más y ser nombrado **Mejor caballo del año 2021**. Terminó su carrera deportiva representando a España en los hipódromos más prestigiosos del mundo como Meydan (Dubai), Royal Ascot (Gran Bretaña) o Longchamp (Francia).`,
       palmares: [
         {
           edad: "A 3 años",

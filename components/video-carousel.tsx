@@ -72,8 +72,8 @@ export default function VideoCarousel({ videos, title, className }: VideoCarouse
           })}
         </CarouselContent>
         <div className="flex justify-center gap-4 mt-8">
-          <CarouselPrevious className="bg-contrast/10 hover:bg-contrast/20 text-primary border-primary" />
-          <CarouselNext className="bg-contrast/10 hover:bg-contrast/20 text-primary border-primary" />
+          <CarouselPrevious className="static bg-contrast/10 hover:bg-contrast/20 text-primary border-primary" />
+          <CarouselNext className="static bg-contrast/10 hover:bg-contrast/20 text-primary border-primary" />
         </div>
       </Carousel>
     </div>

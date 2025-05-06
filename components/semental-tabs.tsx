@@ -15,6 +15,7 @@ import { Button } from "./ui/button"
 import VideoCarousel from "./video-carousel"
 import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog"
 import { X, ChevronLeft, ChevronRight } from "lucide-react"
+import { DialogTitle } from "@radix-ui/react-dialog"
 
 interface VideoItem {
   url: string
@@ -581,8 +582,8 @@ export default function SementalTabs({ semental }: SementalTabsProps) {
               ))}
             </CarouselContent>
             <div className="flex justify-center gap-4 mt-8">
-              <CarouselPrevious className="bg-contrast/10 hover:bg-contrast/20 text-primary border-primary" />
-              <CarouselNext className="bg-contrast/10 hover:bg-contrast/20 text-primary border-primary" />
+              <CarouselPrevious className="static bg-contrast/10 hover:bg-contrast/20 text-primary border-primary" />
+              <CarouselNext className="static bg-contrast/10 hover:bg-contrast/20 text-primary border-primary" />
             </div>
           </Carousel>
         </div>
@@ -590,7 +591,15 @@ export default function SementalTabs({ semental }: SementalTabsProps) {
 
       {/* Fullscreen Image Modal */}
       <Dialog open={showImageModal} onOpenChange={setShowImageModal}>
-        <DialogContent className="max-w-screen-lg p-0 w-[calc(100vw-32px)] h-[calc(100vh-32px)] border-none bg-transparent shadow-none">
+        <DialogTitle className="sr-only">Imagen de {semental.name}</DialogTitle>
+        <DialogContent 
+          className="max-w-screen-lg p-0 w-[calc(100vw-32px)] h-[calc(100vh-32px)] border-none bg-transparent shadow-none" 
+          aria-describedby={undefined}
+          forceMount
+          onInteractOutside={() => setShowImageModal(false)}
+          onEscapeKeyDown={() => setShowImageModal(false)}
+          onPointerDownOutside={() => setShowImageModal(false)}
+        >
           <div className="relative w-full h-full flex items-center justify-center">
             {/* Image container */}
             <div className="relative w-full h-full flex items-center justify-center">
@@ -610,15 +619,8 @@ export default function SementalTabs({ semental }: SementalTabsProps) {
               )}
             </div>
             
-            {/* Close button */}
-            <button 
-              onClick={() => setShowImageModal(false)}
-              className="absolute top-4 right-4 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-all z-50"
-              aria-label="Cerrar"
-            >
-              <X className="w-6 h-6" />
-            </button>
-            
+            <DialogClose className="absolute top-4 right-4 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-all z-100" />
+
             {/* Navigation controls */}
             <button
               onClick={prevImage}
