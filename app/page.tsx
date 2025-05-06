@@ -24,24 +24,6 @@ export default function Home() {
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-primary text-center mb-10 hover:text-gold">Sementales</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Rodaballo */}
-          <Link href="/sementales/rodaballo" className="group">
-            <div className="relative h-[400px] w-full overflow-hidden rounded-lg">
-              <Image
-                src="/sementales/rodaballo/perfil.jpg"
-                alt="Rodaballo"
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0">
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gray-50 bg-opacity-30 backdrop-blur-sm">
-                  <h3 className="text-3xl font-bold text-primary group-hover:text-gold">Rodaballo</h3>
-                  <p className="text-lg text-primary">LOPE DE VEGA X SHORT AFFAIR</p>
-                </div>
-              </div>
-            </div>
-          </Link>
-          
           {/* Bow Creek */}
           <Link href="/sementales/bowcreek" className="group">
             <div className="relative h-[400px] w-full overflow-hidden rounded-lg">
@@ -55,6 +37,24 @@ export default function Home() {
                 <div className="absolute bottom-0 left-0 right-0 p-6 bg-gray-50 bg-opacity-30 backdrop-blur-sm">
                   <h3 className="text-3xl font-bold text-primary group-hover:text-gold">Bow Creek</h3>
                   <p className="text-lg text-primary">SHAMARDAL X BENEVENTA</p>
+                </div>
+              </div>
+            </div>
+          </Link>
+          
+          {/* Rodaballo */}
+          <Link href="/sementales/rodaballo" className="group">
+            <div className="relative h-[400px] w-full overflow-hidden rounded-lg">
+              <Image
+                src="/sementales/rodaballo/perfil.jpg"
+                alt="Rodaballo"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0">
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gray-50 bg-opacity-30 backdrop-blur-sm">
+                  <h3 className="text-3xl font-bold text-primary group-hover:text-gold">Rodaballo</h3>
+                  <p className="text-lg text-primary">LOPE DE VEGA X SHORT AFFAIR</p>
                 </div>
               </div>
             </div>

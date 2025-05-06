@@ -7,10 +7,10 @@ export default function SementalesPage() {
     <div className="container mx-auto px-4 py-16">
       <PageHeader title="Nuestros Sementales" />
 
-      <div className="mt-12 space-y-16">
+      <div className="mt-12 space-y-16 mx-5">
         {/* Bow Creek */}
         <Link href="/sementales/bowcreek" className="group">
-          <div className="relative mb-10 h-[600px] w-full overflow-hidden rounded-lg">
+          <div className="relative mb-10 h-[600px] lg:h-[700px] xl:h-[700px] md:h-[800px] sm:h-[800px] w-full overflow-hidden rounded-lg">
             <Image
               src="/sementales/bowcreek/perfil.jpg"
               alt="Bow Creek"
@@ -29,7 +29,7 @@ export default function SementalesPage() {
 
         {/* Rodaballo */}
         <Link href="/sementales/rodaballo" className="group">
-            <div className="relative h-[600px] w-full overflow-hidden rounded-lg">
+            <div className="relative h-[600px] lg:h-[700px] xl:h-[700px] md:h-[800px] sm:h-[800px] w-full overflow-hidden rounded-lg">
               <Image
                 src="/sementales/rodaballo/perfil.jpg"
                 alt="Rodaballo"

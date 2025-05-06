@@ -13,7 +13,7 @@ interface SementalProps {
 
 export default function SementalHero({ semental }: SementalProps) {
   return (
-    <div className="relative w-full h-[70vh] overflow-hidden">
+    <div className="relative w-full h-[80vh] lg:h-[80vh] md:h-[800px] sm:h-[800px] overflow-hidden">
       <Image src={semental.image || "/placeholder.svg"} alt={semental.name} fill className="object-cover" priority />
       {/*<div className="absolute inset-0 bg-gradient-to-t from-background via-background/10 to-transparent">
         <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
