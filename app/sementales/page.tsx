@@ -10,12 +10,12 @@ export default function SementalesPage() {
       <div className="mt-12 space-y-16 mx-5">
         {/* Bow Creek */}
         <Link href="/sementales/bowcreek" className="group">
-          <div className="relative mb-10 h-[600px] lg:h-[700px] xl:h-[700px] md:h-[800px] sm:h-[800px] w-full overflow-hidden rounded-lg">
+          <div className="relative mb-10 h-[600px] w-full overflow-hidden rounded-lg">
             <Image
               src="/sementales/bowcreek/perfil.jpg"
               alt="Bow Creek"
               fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              className="object-cover object-[20%_center] sm:object-center transition-transform duration-500 group-hover:scale-105"
             />
             <div className="absolute inset-0">
               <div className="absolute bottom-0 left-0 right-0 p-6 bg-gray-50 bg-opacity-30 backdrop-blur-sm">
@@ -29,12 +29,12 @@ export default function SementalesPage() {
 
         {/* Rodaballo */}
         <Link href="/sementales/rodaballo" className="group">
-            <div className="relative h-[600px] lg:h-[700px] xl:h-[700px] md:h-[800px] sm:h-[800px] w-full overflow-hidden rounded-lg">
+            <div className="relative h-[600px] w-full overflow-hidden rounded-lg">
               <Image
                 src="/sementales/rodaballo/perfil.jpg"
                 alt="Rodaballo"
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                className="object-cover object-[20%_center] sm:object-center transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0">
                 <div className="absolute bottom-0 left-0 right-0 p-6 bg-gray-50 bg-opacity-30 backdrop-blur-sm">

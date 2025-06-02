@@ -61,6 +61,19 @@ export default async function SementalPage({ params }: SementalPageProps) {
       ],
       producciones: [
         {
+          nombre: "SERIGRAPHE",
+          año: "2020",
+          origen: "BOW CREEK X ARCADAN (TÔT OU TARD)",
+          ganancias: "688.000€",
+          victorias: "11 Victoria – 12 Colocaciones",
+          logros: [
+            "1º Gran Premio LHAJ Mazgouri Mohamed 2024 - 1900 m. Casablanca, Marruecos",
+            "⁠1º Gran Premio Nijinsky 2021 - 1900 m. Casablanca, Marruecos",
+            "⁠3º Gran Premio des propriétaires 2021 - 1900 m. Casablanca, Marruecos"
+          ],
+          imagen: "/sementales/bowcreek/producciones/serigraphe.jpeg",
+        },
+        {
           nombre: "BREIZH EAGLE",
           año: "2018",
           origen: "BOW CREEK X BREIZH TOUCH (COUNTRY REEL)",
@@ -77,6 +90,19 @@ export default async function SementalPage({ params }: SementalPageProps) {
           imagen: "/sementales/bowcreek/producciones/breizh-eagle.jpg",
         },
         {
+          nombre: "WORTH A TEAM",
+          año: "2020",
+          origen: "BOW CREEK X GRACIEUSE (MUHTATHIR)",
+          ganancias: "189.550€",
+          victorias: "8 Victorias – 15 Colocaciones",
+          logros: [
+            "2º Prix Durtain (Listed Race) 2024 – 3600 m. Compiegne, Francia",
+            "3º Prix Stanley (Listed Race) 2023 – 3500 m. Auteuil, Francia",
+            "4º Prix Aguado (Grupo 3)  2023 – 3500m. Auteuil, Francia",
+          ],
+          imagen: "/sementales/bowcreek/producciones/wortha.jpg",
+        },
+        {
           nombre: "WHAT'S UP",
           año: "2018",
           origen: "BOW CREEK X PERFECT BOUNTY (BAHAMIAN BOUNTY)",
@@ -91,30 +117,8 @@ export default async function SementalPage({ params }: SementalPageProps) {
           imagen: "/sementales/bowcreek/producciones/whatsup.jpg",
         },
         {
-          nombre: "GOT SOCKS",
-          año: "2020",
-          origen: "BOW CREEK X LOVELY BEST (KING'S BEST)",
-          ganancias: "23.720€",
-          victorias: "1 Victoria – 2 Colocaciones",
-          logros: ["2º Prix Herod (Listed Race) 2022 – 1400 m. Saint-Cloud, Francia"],
-          imagen: "/sementales/bowcreek/producciones/got-socks.png",
-        },
-        {
-          nombre: "WORTH A TEAM",
-          año: "2020",
-          origen: "BOW CREEK X GRACIEUSE (MUHTATHIR)",
-          ganancias: "189.550€",
-          victorias: "8 Victorias – 15 Colocaciones",
-          logros: [
-            "2º Prix Durtain (Listed Race) 2024 – 3600 m. Compiegne, Francia",
-            "3º Prix Stanley (Listed Race) 2023 – 3500 m. Auteuil, Francia",
-            "4º Prix Aguado (Grupo 3)  2023 – 3500m. Auteuil, Francia",
-          ],
-          imagen: "/sementales/bowcreek/producciones/wortha.jpg",
-        },
-        {
           nombre: "KALEOCREEK",
-          año: "2023",
+          año: "2021",
           origen: "BOW CREEK X BAMIYANE (KOUROUN)",
           ganancias: "61.550€",
           victorias: "2 Victorias – 12 Colocaciones",
@@ -126,7 +130,7 @@ export default async function SementalPage({ params }: SementalPageProps) {
         },
         {
           nombre: "YORKSHIRE TERRIER",
-          año: "2023",
+          año: "2021",
           origen: "BOW CREEK X YORKINDRED SPIRIT (SEA THE STARS)",
           ganancias: "18.000€",
           victorias: "2 Victorias – 0 Colocaciones",
