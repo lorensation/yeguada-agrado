@@ -238,6 +238,188 @@ export default async function SementalPage({ params }: SementalPageProps) {
       testimonial:
         '"Rodaballo era un caballo con mucha velocidad y un excelente cambio de ritmo. Corrió bien en todo tipo de terrenos y fue un caballo muy duro, con una cabeza privilegiada" -Guillermo Arizkorreta',
     },
+    {
+      id: "noozhoh",
+      name: "NOOZHOH CANARIAS",
+      tagline: "CARADAK  X NOOZHAH (SINGSPIEL)",
+      fee: "4.000€ PV",
+      year: "2023",
+      image: "/sementales/noozhoh/hero.jpg",
+      description: "El mejor caballo nacido y criado en España del siglo XXI",
+      breed: "Pura Sangre Inglés",
+      color: "Alazán",
+      height: "1,62m",
+      born: "2011",
+      origin: "CARADAK X NOOZHAH (SINGSPIEL)",
+      achievements: [],
+      profile:
+        `**NOOZHOH CANARIAS** es el mejor caballo nacido y criado en España del siglo XXI. Nombrado **mejor caballo del año 2013**, 'NOOZHOH' es hijo de **CARADAK**, uno de los sementales con mayor producción a nivel nacional, y de la doble ganadora NOOZHAH.\n\nCaballo de época, **NOOZHOH CANARIAS** se mantuvo invicto a 2 años hasta que llamó a la puerta de la élite europea al ser **2º** en el **Prix Jean-Luc Lagardère** (**Grupo 1**) en París, marcando el máximo valor de un caballo español en Europa. Su programa a 3 años pasó por los mejores hipódromos de Europa donde dominó hasta los 200 metros las mejores **British 2000 Guineas (Grupo 1\)** que se recuerdan frente a sementales de primer nivel mundial como **NIGHT OF THUNDER**, **KINGMAN**, **AUSTRALIA**, **CHARM SPIRIT**, **THE GREY GATSBY**, **WAR COMMAND** o **OUTSTRIP**. Amplió su inédito palmarés en competición con varias colocaciones más en **Grupo 1**, **Grupo 3** y **Listed Race** para posteriormente retirarse ganando su primer **Gran Premio** en España.\n\n**Mejor semental de España** en 2024, su producción ha heredado su gran calidad sumando más de 1.000.000€ en premios y un **70%** de **ganadores** además de 2 negritas: **ALL IRON** y **Tetuan.**`,
+      palmares: [
+        {
+          edad: "A 2 años",
+          logros: [
+            "1º Premio Primer Paso 2013 - 800 m. Madrid, España",
+            "1º Premio Martorell 2013 - 1200 m. Madrid, España",
+            "1º Criterium du Bequet (Listed Race) 2013 - 1200 m. La Teste de Buch, Francia",
+            "2º Prix Jean-Luc Lagardère (Grupo 1) - 1400 m. Longchamp, Francia",
+          ],
+        },
+        {
+          edad: "A 3 años",
+          logros: [
+            "1º Premio Torre Arias 2014 – 1400 m. Madrid, España",
+            "6º British 2000 Guineas (Grupo 1) 2014 – 1600 m. Newmarket, Gran Bretaña",
+            "3º Prix de la Fôret (Grupo 1) 2014 – 1400 m. Longchamp, Francia",
+          ],
+        },
+        {
+          edad: "A 4 años",
+          logros: [
+            "3º Prix Servanne (Listed Race) 2015 – 1200m. Maisons-Laffitte, Francia",
+            "3º Prix de la Porte Maillot (Grupo 3) 2015 – 1400m. Longchamp, Francia",
+          ],
+        },
+        {
+          edad: "A 5 años",
+          logros: [
+            "1º Premio Andrés Covarrubias 2016 - 1400 m. Madrid, España",
+            "1º Premio Nertal 2016 - 1600 m. Madrid, España",
+            "1º Gran Premio Claudio Carudel 2016 - 1600 m. Madrid, España",
+            "2º Gran Premio de la Hispanidad 2016 - 1600 m. Madrid, España",
+            "2º Gran Premio Antonio Blasco 2016 - 1400 m. Madrid, España",
+          ],
+        },
+      ],
+      producciones: [
+        {
+          nombre: "TETUAN",
+          año: "2021",
+          origen: "NOOZHOH CANARIAS X EBALVIYRA (ANABAA)",
+          ganancias: "136.000€",
+          victorias: "4 Victorias – 6 Colocaciones",
+          logros: [
+            "Mejor 3 años de 2024",
+            "1º Criterium Nacional 2023 – 1600 m. Madrid, España",
+            "1º Gran Premio Nacional 2024 – 2200 m. Madrid, España",
+            "1º Gran Premio Villapadierna (Derby Español) 2024 – 2400 m. Madrid, España",
+            "2º Gran Premio Memorial Duque de Toledo 2024 – 2400 m. Madrid, España",
+            "2º Gran Premio de Madrid (Listed Race) 2025 – 2400 m. Madrid, España",
+            "2º Gran Premio Villamejor 2024 – 2800 m. Madrid, España",
+            "3º Gran Premio Duque de Alburquerque 2025 – 2000 m. Madrid, España",
+          ],
+          imagen: "/sementales/noozhoh/producciones/tetuan.jpg",
+        },
+        {
+          nombre: "ALL IRON",
+          año: "2020",
+          origen: "NOOZHOH CANARIAS X SWEET SUE (NATHANIEL)",
+          ganancias: "38.000€",
+          victorias: "2 Victorias – 1 Colocaciones",
+          logros: [
+            "1º Premio Luis Maroto 2022– 1600 m. Madrid, España",
+            "1º Derby du Midi (Listed Race) 2023 – 1900 m. Bordeaux Le Bouscat, Francia",
+          ],
+          imagen: "/sementales/noozhoh/producciones/all-iron.jpg",
+        },
+        {
+          nombre: "BRAVO",
+          año: "2019",
+          origen: "NOOZHOH CANARIAS X VAMOS ESPAÑA (SIYOUNI)",
+          ganancias: "111.040€",
+          victorias: "8 Victorias – 30 Colocaciones",
+          logros: [
+            "1º Premio Pablo Font 2022 – 1200 m. Madrid, España",
+            "1º Premio Monet 2022 – 1200 m. Madrid, España",
+            "1º Premio Fernando Melchor 2022 – 1600 m. Madrid, España",
+            "1º Premio Eduardo Olgado 2023– 1400 m. Madrid, España",
+            "1º Premio Aso. Cultural Fotoquinto 2023– 1500 m. Sevilla, España",
+            "1º Premio Habit 2024 – 1600 m. Madrid, España",
+            "1º Premio Antaris – 1500 m. Sevilla, España",
+          ],
+          imagen: "/sementales/noozhoh/producciones/bravo.jpg",
+        },
+        {
+          nombre: "RONCAL",
+          año: "2022",
+          origen: "NOOZHOH CANARIAS X ZIGA (AUTHORIZED)",
+          ganancias: "44.600€",
+          victorias: "3 Victorias – 2 Colocaciones",
+          logros: [
+            "1º Gran Premio Nacional 2025 – 2200 m. Madrid, España",
+            "1º Premio Jose Carlos Fernández 2025 – 1800 m. Madrid, España",
+            "3º Gran Premio Villapadierna (Derby Español) 2025 – 2400 m. Madrid, España",
+          ],
+          imagen: "/sementales/noozhoh/producciones/roncal.jpg",
+        },
+        {
+          nombre: "CASILDA",
+          año: "2019",
+          origen: "NOOZHOH CANARIAS X LA COPA (PIVOTAL)",
+          ganancias: "59.450€",
+          victorias: "4 Victorias – 5 Colocaciones",
+          logros: [
+            "1º Gran Premio Subasta ACPSIE 2021– 1600 m. Madrid, España",
+            "1º Premio Reltaj 2021– 1100 m. Madrid, España",
+            "1º Copa de Criadores 2021 – 1500 m. Madrid, España",
+            "1º Premio Roberto Cocheteux 2022 – 1600 m. Madrid, España",
+          ],
+          imagen: "/sementales/noozhoh/producciones/casilda.jpg",
+        },
+        {
+          nombre: "PANTXINETA",
+          año: "2019",
+          origen: "NOOZHOH CANARIAS X GOOD MORNING STAR (SHIROCCO)",
+          ganancias: "57.500€",
+          victorias: "6 Victorias – 10 Colocaciones",
+          logros: [
+            "1º Gran Premio Nacional 2022 – 2200 m. Madrid, España",
+            "1º Premio Santana Informatica 2022– 2000 m. San Sebastián, España",
+            "1º Premio Garda Seguridad 2022– 1600 m. San Sebastián, España",
+            "1º Premio Marbell 2023– 2000 m. San Sebastián, España",
+            "1º Premio PMC 2023– 2000 m. San Sebastián, España",
+            "1º Premio PL Dos Hermanas 2024– 2400 m. Sevilla, España",
+          ],
+          imagen: "/sementales/noozhoh/producciones/pantxineta.jpg",
+        },
+      ],
+      videoUrl: "https://youtu.be/M8IwWy-B6fs?si=w3Ojw1Zq-o3L5IG-",
+      videos: [
+        {
+          url: "https://youtu.be/M8IwWy-B6fs?si=w3Ojw1Zq-o3L5IG-",
+          title: "Noozhoh Canarias - Gran Premio Claudio Carudel 2016"
+        },
+        {
+          url: "https://youtu.be/4zcUw0UZ_4I?si=FeVtz8t7cGBx-GzE",
+          title: "Noozhoh Canarias - Prix Jean-Luc Lagardère G1 2013"
+        },
+        {
+          url: "https://youtu.be/xF7FkKj-sF4?si=LWEThPklo3vi0toU",
+          title: "Noozhoh Canarias - Qatar Prix de la Foret G1 2014"
+        },
+        {
+          url: "https://youtu.be/jZn72CH6NNA?si=JqZSCodsNA0-2OX-",
+          title: "Noozhoh Canarias - Premio Torre Arias 2014"
+        },
+        {
+          url: "https://youtu.be/PGHKvD30jmw?si=hVokCJ8LzdQRnqKN",
+          title: "Noozhoh Canarias - Premio Primer Paso 2013"
+        },
+        {
+          url: "https://youtu.be/eMwPjYkMLoU?si=EZUzNf2wteYA3dOj",
+          title: "Noozhoh Canarias - Criterium du Bequet 2013"
+        },
+        {
+          url: "https://youtu.be/4KpvKjwKuvU?si=DM9v6XoEKCOQyAWz",
+          title: "Noozhoh Canarias - Premio Martorell 2013"
+        },
+        {
+          url: "https://youtu.be/n8Fao-6vzkQ?si=EPP-G0a4i9SoV5Wp",
+          title: "Noozhoh Canarias - QIPCO 2000 Guineas 2014"
+        }
+      ],
+      testimonial:
+        '"Noozhoh Canarias fue un caballo excepcional, con una velocidad innata que lo hizo destacar internacionalmente. Representó a España al más alto nivel y ha demostrado que transmite muy bien esa cualidad a sus hijos" -Enrique León',
+    },
   ]
 
   const semental = sementales.find((s) => s.id === id)

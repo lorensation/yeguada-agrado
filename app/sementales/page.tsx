@@ -45,6 +45,25 @@ export default function SementalesPage() {
               </div>
             </div>
           </Link>
+
+        {/* Noozhoh */}
+        <Link href="/sementales/noozhoh" className="group">
+          <div className="relative h-[600px] lg:h-[800px] md:h-[800px] w-full overflow-hidden rounded-lg">
+            <Image
+              src="/sementales/noozhoh/perfil.jpg"
+              alt="Noozhoh Canarias"
+              fill
+              className="object-cover object-[20%_center] sm:object-center transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0">
+              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gray-50 bg-opacity-30 backdrop-blur-sm">
+                <h3 className="text-3xl font-bold text-primary group-hover:text-gold">Noozhoh Canarias</h3>
+                <p className="text-lg text-primary">CARADAK X NOOZHAH</p>
+                <p className="text-lg text-primary">4.000€ PV</p>
+              </div>
+            </div>
+          </div>
+        </Link>
       </div>
     </div>
   )

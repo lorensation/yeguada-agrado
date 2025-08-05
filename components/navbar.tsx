@@ -36,6 +36,7 @@ export default function Navbar() {
       items: [
         { name: "Bow Creek", href: "/sementales/bowcreek" },
         { name: "Rodaballo", href: "/sementales/rodaballo" },
+        { name: "Noozhoh Canarias", href: "/sementales/noozhoh" },
       ],
     },
     {
