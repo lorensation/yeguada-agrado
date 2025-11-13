@@ -19,7 +19,7 @@ export default function Footer() {
               />
             </div>
             <h3 className="text-gold font-bold text-lg mb-4">Yeguada Agrado</h3>
-            <p className="text-gray-300 mb-4">Dedicados a la cría y doma de caballos de alta calidad desde hace más de 15 años.</p>
+            <p className="text-gray-300 mb-4">Comprometidos con el Turf español desde hace más de 15 años</p>
             <div className="flex space-x-4">
               <Link href="https://www.instagram.com/yeguadaagrado" className="text-white hover:text-gold transition-colors">
                 <Instagram className="h-5 w-5" />
@@ -71,7 +71,7 @@ export default function Footer() {
             <address className="not-italic text-gray-300 space-y-2">
               <p>Carretera M507, km. 20, 500</p>
               <p>28620 Aldea del Fresno, Madrid</p>
-              <p><a href="https://wa.me/34616053904">Teléfono: +34 616 05 39 04</a></p>
+              <p><a href="https://wa.me/34620215049">Teléfono: +34 620 21 50 49</a></p>
               <p>Email: info@yeguada-agrado.es</p>
             </address>
             

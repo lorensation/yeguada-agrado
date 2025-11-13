@@ -28,7 +28,7 @@ This is a Next.js 15 (App Router) website for a Spanish thoroughbred horse breed
 
 ### Component Patterns
 - **shadcn/ui Components**: Located in `components/ui/`. Import via `@/components/ui/*` alias
-- **Styling**: Use Tailwind utility classes. Custom colors: `primary` (#000060), `gold` (#D4AF37), `contrast` (#192A51)
+- **Styling**: Use Tailwind utility classes. Custom colors: `"primary" (#000060), "gold" (#D4AF37), "contrast" (#192A51)`
 - **Utils**: `cn()` helper (`lib/utils.ts`) for conditional class merging with `clsx` and `tailwind-merge`
 - **Admin Components**: Article editor uses HTML templates dropdown for content authoring. Slug auto-generated from title (max 50 chars, lowercase, hyphenated)
 
@@ -94,12 +94,6 @@ Vercel deployment: auto-deploys from GitHub with env vars configured in dashboar
 - **Nodemailer**: Email sending via Hostinger SMTP
 - **Embla Carousel**: Carousels (hero, videos, tweets)
 - **shadcn/ui**: UI components built on Radix UI primitives
-
-## SEO Implementation Notes
-- Reference `TASK.md` for comprehensive SEO plan (Google Search Console, Analytics, Core Web Vitals optimization)
-- Metadata API used for all pages
-- Sitemap generation needed (currently manual, consider `next-sitemap` plugin)
-- Cookie consent form (`components/cookie-form.tsx`) required before GA4 tracking
 
 ## Common Pitfalls
 - **Forgetting `"use client"`**: Add to any component using hooks, events, or browser APIs

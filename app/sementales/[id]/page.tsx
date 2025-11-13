@@ -32,7 +32,7 @@ export default async function SementalPage({ params }: SementalPageProps) {
       origin: "SHAMARDAL X BENEVENTA (MOST WELCOME)",
       achievements: [],
       profile:
-        `**BOW CREEK** es hijo de **SHAMARDAL**, uno de los mejores caballos y sementales del siglo XXI y padre de sementales primer nivel mundial como **LOPE DE VEGA**, **BLUE POINT**, **PINATUBO**, **EARTHLIGHT**, **VICTOR LUDORUM**, …\n\nSu historial deportivo está al alcance de muy pocos sementales en España. Millero internacional triple ganador de Grupo, destacó a 3 años ganando su primer **Grupo 2** en Gran Bretaña llamando la atención del gigante Godolphin, quien apostó por el brindándoles dos **Grupos 2** más en Irlanda y Australia.\n\nEn su primera producción como semental en Francia destacó con caballos como **BREIZH EAGLE** (3º Poule d'Essai des Poulains **G1** 2021 y múltiple ganador de Listed Race) y el incansable **WHAT'S UP** en España (**1º Gran Premio Cimera** – Poule de Potros 2021 y triple colocado de **Gran Premio** a 3 años).\n\nPrecocidad y velocidad asegurada.`,
+        `**BOW CREEK** es hijo de **SHAMARDAL**, uno de los mejores caballos y sementales del siglo XXI y padre de sementales primer nivel mundial como **LOPE DE VEGA**, **BLUE POINT**, **PINATUBO**, **VICTOR LUDORUM**, …\n\nSu historial deportivo está al alcance de muy pocos sementales en España. Millero internacional triple ganador de Grupo, destacó a 3 años ganando su primer **Grupo 2** en Gran Bretaña llamando la atención del gigante Godolphin, quien apostó por el brindándoles dos **Grupos 2** más en Irlanda y Australia.\n\nEn su primera producción como semental en Francia destacó con caballos como **BREIZH EAGLE** (3º Poule d'Essai des Poulains **G1** 2021 y múltiple ganador de Listed Race) y el incansable **WHAT'S UP** en España (**1º Gran Premio Cimera** – Poule de Potros 2021 y triple colocado de **Gran Premio** a 3 años).\n\nPrecocidad y velocidad asegurada.`,
       palmares: [
         {
           edad: "A 2 años",
@@ -65,7 +65,7 @@ export default async function SementalPage({ params }: SementalPageProps) {
           año: "2020",
           origen: "BOW CREEK X ARCADAN (TÔT OU TARD)",
           ganancias: "688.000€",
-          victorias: "11 Victoria – 12 Colocaciones",
+          victorias: "11 Victorias – 12 Colocaciones",
           logros: [
             "1º Gran Premio LHAJ Mazgouri Mohamed 2024 - 1900 m. Casablanca, Marruecos",
             "⁠1º Gran Premio Nijinsky 2021 - 1900 m. Casablanca, Marruecos",
@@ -120,8 +120,8 @@ export default async function SementalPage({ params }: SementalPageProps) {
           nombre: "KALEOCREEK",
           año: "2021",
           origen: "BOW CREEK X BAMIYANE (KOUROUN)",
-          ganancias: "61.550€",
-          victorias: "2 Victorias – 12 Colocaciones",
+          ganancias: "84.160€",
+          victorias: "4 Victorias – 20 Colocaciones",
           logros: [
             "Primer 2 años ganador en Europa en 2023",
             "1º Prix de Carqueiranne 2023 – 1000 m. Marseille Borely, Francia",
@@ -253,7 +253,7 @@ export default async function SementalPage({ params }: SementalPageProps) {
       origin: "CARADAK X NOOZHAH (SINGSPIEL)",
       achievements: [],
       profile:
-        `**NOOZHOH CANARIAS** es el mejor caballo nacido y criado en España del siglo XXI. Nombrado **mejor caballo del año 2013**, 'NOOZHOH' es hijo de **CARADAK**, uno de los sementales con mayor producción a nivel nacional, y de la doble ganadora NOOZHAH.\n\nCaballo de época, **NOOZHOH CANARIAS** se mantuvo invicto a 2 años hasta que llamó a la puerta de la élite europea al ser **2º** en el **Prix Jean-Luc Lagardère** (**Grupo 1**) en París, marcando el máximo valor de un caballo español en Europa. Su programa a 3 años pasó por los mejores hipódromos de Europa donde dominó hasta los 200 metros las mejores **British 2000 Guineas (Grupo 1\)** que se recuerdan frente a sementales de primer nivel mundial como **NIGHT OF THUNDER**, **KINGMAN**, **AUSTRALIA**, **CHARM SPIRIT**, **THE GREY GATSBY**, **WAR COMMAND** o **OUTSTRIP**. Amplió su inédito palmarés en competición con varias colocaciones más en **Grupo 1**, **Grupo 3** y **Listed Race** para posteriormente retirarse ganando su primer **Gran Premio** en España.\n\n**Mejor semental de España** en 2024, su producción ha heredado su gran calidad sumando más de 1.000.000€ en premios y un **70%** de **ganadores** además de 2 negritas: **ALL IRON** y **Tetuan.**`,
+        `**NOOZHOH CANARIAS** es el mejor caballo de España del siglo XXI.\n\nCaballo de época, **NOOZHOH CANARIAS** se mantuvo invicto a 2 años hasta que llamó a la puerta de la élite europea al ser **2º** en el **Prix Jean-Luc Lagardère** (**Grupo 1**) en París, marcando el máximo valor de un caballo español en Europa. Su programa a 3 años pasó por los mejores hipódromos de Europa donde dominó hasta los 200 metros las mejores **British 2000 Guineas (Grupo 1\)** que se recuerdan frente a sementales de primer nivel mundial como **NIGHT OF THUNDER**, **KINGMAN** o **AUSTRALIA**. \n\n Amplió su inédito palmarés en competición con varias colocaciones más en **Grupo 1**, **Grupo 3** y **Listed Race** para posteriormente retirarse ganando su primer **Gran Premio** en España.\n\n**Mejor semental de España** en 2024 y 2025, su producción ha heredado su gran calidad sumando más de 1.200.000€ en premios y un **60%** de **ganadores** además de 2 negritas: **ALL IRON** y **Tetuan.**`,
       palmares: [
         {
           edad: "A 2 años",
@@ -292,20 +292,33 @@ export default async function SementalPage({ params }: SementalPageProps) {
       ],
       producciones: [
         {
+          nombre: "ARZUA",
+          año: "2023",
+          origen: "NOOZHOH CANARIAS X ATEGORRIETA (RIP VAN WINKLE)",
+          ganancias: "71.000€",
+          victorias: "4 Victorias – 1 Colocación",
+          logros: [
+            "Mejor 2 años de 2025",
+            "1º Primer Paso 2025 – 1000 m. Madrid, España",
+            "1º Criterium Nacional 2025 – 1400 m. San Sebastián, España",
+            "1º Criterium Internacional 2025 – 1500 m. San Sebastián, España",
+            "1º Gran Criterium 2025 – 1600 m. Madrid, España",
+          ],
+          imagen: "/sementales/noozhoh/producciones/arzua.jpg",
+        },
+        {
           nombre: "TETUAN",
           año: "2021",
           origen: "NOOZHOH CANARIAS X EBALVIYRA (ANABAA)",
-          ganancias: "136.000€",
-          victorias: "4 Victorias – 6 Colocaciones",
+          ganancias: "189.900€",
+          victorias: "6 Victorias – 7 Colocaciones",
           logros: [
             "Mejor 3 años de 2024",
+            "1º Gran Premio Román Martín 2025 – 2000 m. Madrid, España",
             "1º Criterium Nacional 2023 – 1600 m. Madrid, España",
             "1º Gran Premio Nacional 2024 – 2200 m. Madrid, España",
             "1º Gran Premio Villapadierna (Derby Español) 2024 – 2400 m. Madrid, España",
-            "2º Gran Premio Memorial Duque de Toledo 2024 – 2400 m. Madrid, España",
             "2º Gran Premio de Madrid (Listed Race) 2025 – 2400 m. Madrid, España",
-            "2º Gran Premio Villamejor 2024 – 2800 m. Madrid, España",
-            "3º Gran Premio Duque de Alburquerque 2025 – 2000 m. Madrid, España",
           ],
           imagen: "/sementales/noozhoh/producciones/tetuan.jpg",
         },
@@ -325,16 +338,13 @@ export default async function SementalPage({ params }: SementalPageProps) {
           nombre: "BRAVO",
           año: "2019",
           origen: "NOOZHOH CANARIAS X VAMOS ESPAÑA (SIYOUNI)",
-          ganancias: "111.040€",
-          victorias: "8 Victorias – 30 Colocaciones",
+          ganancias: "113.000€",
+          victorias: "8 Victorias – 33 Colocaciones",
           logros: [
             "1º Premio Pablo Font 2022 – 1200 m. Madrid, España",
             "1º Premio Monet 2022 – 1200 m. Madrid, España",
             "1º Premio Fernando Melchor 2022 – 1600 m. Madrid, España",
             "1º Premio Eduardo Olgado 2023– 1400 m. Madrid, España",
-            "1º Premio Aso. Cultural Fotoquinto 2023– 1500 m. Sevilla, España",
-            "1º Premio Habit 2024 – 1600 m. Madrid, España",
-            "1º Premio Antaris – 1500 m. Sevilla, España",
           ],
           imagen: "/sementales/noozhoh/producciones/bravo.jpg",
         },
@@ -342,11 +352,12 @@ export default async function SementalPage({ params }: SementalPageProps) {
           nombre: "RONCAL",
           año: "2022",
           origen: "NOOZHOH CANARIAS X ZIGA (AUTHORIZED)",
-          ganancias: "44.600€",
-          victorias: "3 Victorias – 2 Colocaciones",
+          ganancias: "55.400€",
+          victorias: "3 Victorias – 3 Colocaciones",
           logros: [
             "1º Gran Premio Nacional 2025 – 2200 m. Madrid, España",
             "1º Premio Jose Carlos Fernández 2025 – 1800 m. Madrid, España",
+            "2º Gran Premio Villamejor 2025 – 2800 m. Madrid, España",
             "3º Gran Premio Villapadierna (Derby Español) 2025 – 2400 m. Madrid, España",
           ],
           imagen: "/sementales/noozhoh/producciones/roncal.jpg",
@@ -373,11 +384,8 @@ export default async function SementalPage({ params }: SementalPageProps) {
           victorias: "6 Victorias – 10 Colocaciones",
           logros: [
             "1º Gran Premio Nacional 2022 – 2200 m. Madrid, España",
-            "1º Premio Santana Informatica 2022– 2000 m. San Sebastián, España",
-            "1º Premio Garda Seguridad 2022– 1600 m. San Sebastián, España",
             "1º Premio Marbell 2023– 2000 m. San Sebastián, España",
             "1º Premio PMC 2023– 2000 m. San Sebastián, España",
-            "1º Premio PL Dos Hermanas 2024– 2400 m. Sevilla, España",
           ],
           imagen: "/sementales/noozhoh/producciones/pantxineta.jpg",
         },
@@ -417,8 +425,7 @@ export default async function SementalPage({ params }: SementalPageProps) {
           title: "Noozhoh Canarias - QIPCO 2000 Guineas 2014"
         }
       ],
-      testimonial:
-        '"Noozhoh Canarias fue un caballo excepcional, con una velocidad innata que lo hizo destacar internacionalmente. Representó a España al más alto nivel y ha demostrado que transmite muy bien esa cualidad a sus hijos" -Enrique León',
+      testimonial: "",
     },
   ]
 

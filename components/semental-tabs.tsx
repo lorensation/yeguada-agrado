@@ -315,7 +315,7 @@ export default function SementalTabs({ semental }: SementalTabsProps) {
                   )}
                   {semental.fee && (
                     <div className="col-span-2 mt-2">
-                      <span className="text-primary font-bold mx-2">Fee 2025:</span>
+                      <span className="text-primary font-bold mx-2">Fee 2026:</span>
                       <span className="text-primary">{semental.fee}</span>
                     </div>
                   )}

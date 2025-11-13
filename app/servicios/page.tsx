@@ -47,8 +47,7 @@ export default function ServiciosPage() {
       image: "/servicios/pretraining-principal2.jpg",
       detailDescription: `El proceso de pre-training se desarrolla en la <strong>nueva pista de pre-training</strong>. Con <strong>700 metros de cuerda</strong> y <strong>4 metros de anchura</strong>, la pista de pre-training es el trazado ideal para que los potros empiecen a conocer su oficio.\n\n 
         Un <strong>drenaje especial</strong> acompañado de <strong>arena mezclada con fibra</strong> presta las condiciones idóneas para un correcto ejercicio. Los potros se dividen en lotes y completan un proceso de <strong>2 a 3 meses</strong> en la pista con <strong>profesionales de primer nivel</strong> donde aprenden a trotar, galopar y trabajar cabeza-cabeza con otros potros.\n\n
-        Una vez completado el pre-training, están listos para viajar con sus entrenadores a los centros de entrenamiento.
-        Esta temporada 2025, hemos completado exitosamente la doma y pre-training de <strong>16 potros</strong> que ya se encuentran a las órdenes de sus respectivos entrenadores.`,
+        Una vez completado el pre-training, están listos para viajar con sus entrenadores a los centros de entrenamiento.`,
       images: [
         "/servicios/pretraining/pretraining4.jpg",
         "/servicios/pretraining-principal.jpg",
